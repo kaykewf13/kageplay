@@ -1,0 +1,55 @@
+origem;url_origem;tipo_filtro;categoria;slug;kageplay_grupo;adulto_18;mostrar_menu;acao_recomendada;observacao
+AniZero;https://anizero.org/lista-de-animes/;Idioma;Legendado;legendados;Idioma;False;True;Mapear;Filtro AniZero: tipo de vídeo legendado
+AniZero;https://anizero.org/lista-de-animes/;Idioma;Dublado;dublados;Idioma;False;True;Mapear;Filtro AniZero: tipo de vídeo dublado
+AniZero;https://anizero.org/lista-de-animes/;Status;Completo;completo;Status;False;True;Mapear;Filtro AniZero: status completo
+AniZero;https://anizero.org/lista-de-animes/;Status;Lançamento;lancamento;Status;False;True;Mapear;Filtro AniZero: status lançamento
+AniZero;https://anizero.org/lista-de-animes/;Formato;Anime;anime;Formato;False;True;Mapear;Filtro AniZero: formato anime
+AniZero;https://anizero.org/lista-de-animes/;Formato;Filme;filmes;Formato;False;True;Mapear;Filtro AniZero: formato filme
+AniZero;https://anizero.org/lista-de-animes/;Genero;Romance;romance;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Shoujo;shoujo;Subgenero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Vida Escolar;vida-escolar;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Ação;acao;Genero;False;True;Mapear;Normalizado para Acao no catálogo
+AniZero;https://anizero.org/lista-de-animes/;Genero;Ficção Científica;ficcao-cientifica;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Mecha;mecha;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Seinen;seinen;Subgenero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Comédia;comedia;Genero;False;True;Mapear;Normalizado para Comedia no catálogo
+AniZero;https://anizero.org/lista-de-animes/;Genero;Drama;drama;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Shounen;shounen;Subgenero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Aventura;aventura;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Ecchi;ecchi-18;Adulto 18+;True;True;Revisar;Categoria marcada como 18+ para evitar publicação automática
+AniZero;https://anizero.org/lista-de-animes/;Genero;Jogos;jogos;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Slice of Life;slice-of-life;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Fantasia;fantasia;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Mistério;misterio;Genero;False;True;Mapear;Normalizado para Misterio no catálogo
+AniZero;https://anizero.org/lista-de-animes/;Genero;Superpoder;superpoder;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Artes Marciais;artes-marciais;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Sobrenatural;sobrenatural;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Demônio;demonio;Genero;False;True;Mapear;Normalizado para Demonio no catálogo
+AniZero;https://anizero.org/lista-de-animes/;Genero;Josei;josei;Subgenero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Militar;militar;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Esportes;esportes;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Animes Dublado;dublados;Idioma;False;True;Mapear;Alias de idioma dublado
+AniZero;https://anizero.org/lista-de-animes/;Genero;Samurai;samurai;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Musical;musica;Genero;False;True;Mapear;Normalizado para Musica no catálogo
+AniZero;https://anizero.org/lista-de-animes/;Genero;Histórico;historico;Genero;False;True;Mapear;Normalizado para Historico no catálogo
+AniZero;https://anizero.org/lista-de-animes/;Genero;Cartoon;cartoon;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Yuri;yuri;Subgenero;False;True;Revisar;Revisar classificação antes de publicar títulos
+AniZero;https://anizero.org/lista-de-animes/;Genero;Magia;magia;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Comédia romântica;comedia-romantica;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Harem;harem;Subgenero;False;True;Revisar;Revisar classificação antes de publicar títulos
+AniZero;https://anizero.org/lista-de-animes/;Genero;Psicológico;psicologico;Genero;False;True;Mapear;Normalizado para Psicologico no catálogo
+AniZero;https://anizero.org/lista-de-animes/;Genero;Suspense;suspense;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Vampiros;vampiros;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Horror;horror;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Thriller;thriller;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Shoujo-ai;shoujo-ai;Subgenero;False;True;Revisar;Revisar classificação antes de publicar títulos
+AniZero;https://anizero.org/lista-de-animes/;Genero;Shounen-ai;shounen-ai;Subgenero;False;True;Revisar;Revisar classificação antes de publicar títulos
+AniZero;https://anizero.org/lista-de-animes/;Genero;Terror;terror;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Sci-Fi & Fantasy;sci-fi-fantasy;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Crime;crime;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Animação;animacao;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Action & Adventure;action-adventure;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Kids;kids;Genero;False;True;Revisar;Revisar antes de misturar com fontes externas
+AniZero;https://anizero.org/lista-de-animes/;Genero;War & Politics;war-politics;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Família;familia;Genero;False;True;Mapear;Gênero AniZero
+AniZero;https://anizero.org/lista-de-animes/;Genero;Faroeste;faroeste;Genero;False;True;Mapear;Gênero AniZero
