@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KagePlay — Area 18+</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .gate { max-width: 560px; margin: 8vh auto; text-align: center; padding: 0 22px; }
+    .gate .ic { font-size: 3.4rem; }
+    .gate h1 { font-family:'Zen Dots',sans-serif; font-size: 1.9rem; margin: 14px 0 8px; }
+    .gate p { color: var(--ink-soft); margin-bottom: 22px; }
+    .gate .row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    #adult-grid { margin-top: 34px; }
+  </style>
+</head>
+<body>
+  <header class="kp-header">
+    <div class="wrap bar">
+      <a class="logo" href="../index.html"><span class="mark">影</span> Kage<b>Play</b></a>
+      <nav class="nav"><a href="../index.html">Inicio</a></nav>
+    </div>
+  </header>
+
+  <div class="gate" id="gate">
+    <div class="ic">🔞</div>
+    <h1>Area adulta — 18+</h1>
+    <p>Esta secao contem conteudo destinado a maiores de 18 anos. Ela fica fora do menu principal e exige confirmacao de idade. Voce confirma ter 18 anos ou mais?</p>
+    <div class="row">
+      <button class="btn btn-primary" id="yes">Sim, tenho 18 anos ou mais</button>
+      <a class="btn btn-ghost" href="../index.html">Nao, voltar</a>
+    </div>
+    <div class="box warn" style="margin-top:26px;text-align:left">
+      <b>Bloqueado por seguranca (nunca disponivel):</b>
+      <ul style="margin-top:8px">
+        <li>Conteudo envolvendo menores ou personagens infantilizados.</li>
+        <li>Coercao, exploracao, violencia sexual.</li>
+        <li>Material ilegal ou de fontes piratas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <main class="wrap" id="adult-area" style="display:none">
+    <div class="sec-head"><h2>Conteudo 18+</h2><span id="adult-counter"></span></div>
+    <div class="grid" id="adult-grid"></div>
+  </main>
+
+  <script>
+    function epElegivel(ep){return ep.gratuito_autorizado==="Sim"&&ep.drm_paywall==="Nao"&&ep.publicar==="Sim";}
+    document.getElementById("yes").onclick = async () => {
+      sessionStorage.setItem("kp_age_ok","1");
+      document.getElementById("gate").style.display = "none";
+      document.getElementById("adult-area").style.display = "block";
+      const cat = await fetch("../data/catalog.json").then(r=>r.json());
+      const list = cat.animes.filter(a => a.publicar==="Sim" && a.adulto_18);
+      const grid = document.getElementById("adult-grid");
+      document.getElementById("adult-counter").textContent = list.length + " titulos";
+      if(!list.length){ grid.innerHTML = '<div class="empty">Nenhum titulo 18+ cadastrado ainda.</div>'; return; }
+      grid.innerHTML = list.map(a => {
+        const ep1 = a.episodios?.[0];
+        const url = "../player.html?anime="+encodeURIComponent(a.anime_id)+"&ep="+(ep1?.episodio_num||1);
+        return `<article class="card"><div class="thumb"><span class="badge adult">18+</span>
+          <img src="${a.capa_url}" onerror="this.src='https://placehold.co/480x720/16161f/9a9aae?text=18%2B'"></div>
+          <div class="body"><h3>${a.titulo}</h3><div class="tags">${a.categoria_principal}</div>
+          <a class="play" href="${url}">Assistir</a></div></article>`;
+      }).join("");
+    };
+  </script>
+</body>
+</html>
