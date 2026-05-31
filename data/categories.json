@@ -1,0 +1,214 @@
+{
+  "versao": "2.0",
+  "atualizado_em": "2026-05-31",
+  "categorias": [
+    {
+      "grupo": "Genero",
+      "categoria": "Acao",
+      "slug": "acao",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Aventura",
+      "slug": "aventura",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Fantasia",
+      "slug": "fantasia",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Drama",
+      "slug": "drama",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Comedia",
+      "slug": "comedia",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Sci-Fi",
+      "slug": "sci-fi",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Sobrenatural",
+      "slug": "sobrenatural",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Slice of Life",
+      "slug": "slice-of-life",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Subgenero",
+      "categoria": "Shounen",
+      "slug": "shounen",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Subgenero",
+      "categoria": "Isekai",
+      "slug": "isekai",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Formato",
+      "categoria": "Filmes",
+      "slug": "filmes",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_filmes"
+    },
+    {
+      "grupo": "Idioma",
+      "categoria": "Dublados",
+      "slug": "dublados",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Idioma",
+      "categoria": "Legendados",
+      "slug": "legendados",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Fonte",
+      "categoria": "Internet Archive",
+      "slug": "arquivo-publico",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_fontes"
+    },
+    {
+      "grupo": "Adulto 18+",
+      "categoria": "Adulto 18+",
+      "slug": "adulto-18",
+      "adulto_18": true,
+      "mostrar_menu": true,
+      "template_canva": "categoria_18"
+    },
+    {
+      "grupo": "Adulto 18+",
+      "categoria": "Ecchi 18+",
+      "slug": "ecchi-18",
+      "adulto_18": true,
+      "mostrar_menu": true,
+      "template_canva": "categoria_18"
+    },
+    {
+      "grupo": "Adulto 18+",
+      "categoria": "Romance Adulto 18+",
+      "slug": "romance-adulto-18",
+      "adulto_18": true,
+      "mostrar_menu": true,
+      "template_canva": "categoria_18"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Romance",
+      "slug": "romance",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Misterio",
+      "slug": "misterio",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Horror",
+      "slug": "horror",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Psicologico",
+      "slug": "psicologico",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Suspense",
+      "slug": "suspense",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Mecha",
+      "slug": "mecha",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Musica",
+      "slug": "musica",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Esportes",
+      "slug": "esportes",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Magia",
+      "slug": "magia",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    }
+  ]
+}
