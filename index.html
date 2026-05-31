@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KagePlay — App</title>
+  <meta name="description" content="App tecnico do KagePlay: catalogo e player interno de animes a partir de fontes gratuitas/autorizadas.">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<div id="age-gate" class="age-gate" hidden>
+  <div class="age-box">
+    <span class="age-ic">🔞</span>
+    <h2>Conteudo adulto</h2>
+    <p>Este catalogo inclui titulos adultos (18+) misturados aos demais. Confirme que voce tem 18 anos ou mais para continuar.</p>
+    <div class="age-actions">
+      <button id="age-yes" class="btn btn-primary">Tenho 18 anos ou mais</button>
+      <a id="age-no" class="btn btn-ghost" href="https://www.google.com">Sair</a>
+    </div>
+    <small>Sua confirmacao fica salva apenas neste navegador, nesta sessao.</small>
+  </div>
+</div>
+<script>
+  (function () {
+    try {
+      if (sessionStorage.getItem("kp_age_ok") === "1") return;
+    } catch (e) {}
+    document.addEventListener("DOMContentLoaded", function () {
+      var g = document.getElementById("age-gate");
+      if (!g) return;
+      g.hidden = false;
+      document.body.style.overflow = "hidden";
+      document.getElementById("age-yes").onclick = function () {
+        try { sessionStorage.setItem("kp_age_ok", "1"); } catch (e) {}
+        g.hidden = true;
+        document.body.style.overflow = "";
+      };
+    });
+  })();
+</script>
+
+  <header class="kp-header">
+    <div class="wrap bar">
+      <a class="logo" href="./index.html">
+        <span class="mark">影</span> Kage<b>Play</b>
+      </a>
+      <nav class="nav">
+        <a href="./index.html">Inicio</a>
+        <a href="#catalogo">Catalogo</a>
+        <a href="./pages/fontes-oficiais.html">Fontes</a>
+        <a href="./pages/como-funciona.html">Como funciona</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Seu cinema de anime, <span class="g">organizado do seu jeito.</span></h1>
+      <p>O KagePlay reune e reproduz animes a partir de fontes gratuitas e autorizadas, com player interno sempre que tecnicamente permitido. Cerebro na planilha, motor aqui no app.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#catalogo">▶ Explorar catalogo</a>
+        <a class="btn btn-ghost" href="./pages/como-funciona.html">Como funciona</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap" id="catalogo">
+    <div class="tools">
+      <div class="search">
+        🔍 <input id="search" type="text" placeholder="Buscar anime, genero...">
+      </div>
+    </div>
+    <div class="chips" id="chips"></div>
+
+    <div class="idiomas" id="idiomas"></div>
+
+    <section class="continuar" id="continuar" style="display:none"></section>
+
+    <div class="sec-head">
+      <h2>Catalogo</h2>
+      <span id="counter">carregando...</span>
+    </div>
+    <div class="grid" id="grid"></div>
+
+    <div class="adult-banner">
+      <span class="ic">🔞</span>
+      <p>Este catalogo inclui titulos adultos (18+) junto aos demais. Use os filtros de categoria para encontrar ou evitar esse conteudo.</p>
+    </div>
+  </main>
+
+  <footer class="kp-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <div class="logo" style="font-size:1.1rem"><span class="mark">影</span> Kage<b>Play</b></div>
+          <p style="margin-top:10px;max-width:34ch">Projeto pessoal de organizacao e reproducao de anime com fontes gratuitas/autorizadas.</p>
+        </div>
+        <div>
+          <h4>Navegacao</h4>
+          <p><a href="./index.html">Inicio</a></p>
+          <p><a href="#catalogo">Catalogo</a></p>
+        </div>
+        <div>
+          <h4>Transparencia</h4>
+          <p><a href="./pages/fontes-oficiais.html">Fontes oficiais</a></p>
+          <p><a href="./pages/como-funciona.html">Como funciona</a></p>
+        </div>
+      </div>
+      <div class="legal">
+        Uso pessoal. Somente fontes autorizadas/gratuitas. O player nao burla DRM, paywall ou protecao de iframe. Quando a fonte nao permite reproducao interna, apenas a fonte oficial e aberta.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/store.js"></script>
+  <script src="./assets/js/catalog.js"></script>
+</body>
+</html>
