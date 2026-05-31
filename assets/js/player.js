@@ -6,6 +6,15 @@
 
 const PL = { catalog: null, policy: null, anime: null, ep: null };
 
+const TIPOS_VIDEO_NATIVO = new Set(["mp4", "webm", "hls"]);
+const TIPOS_IFRAME_OFICIAL = new Set(["youtube", "vimeo", "archive"]);
+const TIPOS_SALA_EXTERNA = new Set(["iframe", "embed", "site", "fonte", "fonte_externa", "externo_embed", "iframe_tentativa"]);
+const MODOS_SALA_EXTERNA = new Set(["embed", "iframe", "iframe_tentativa", "sala_externa", "assistir_na_fonte"]);
+
+function norm(v) {
+  return (v || "").toString().trim().toLowerCase();
+}
+
 function elegivel(ep) {
   return ep.gratuito_autorizado === "Sim"
       && ep.drm_paywall === "Nao"
@@ -22,44 +31,120 @@ function showState(id) {
   if (id) document.getElementById(id).classList.add("show");
 }
 
+function urlSegura(url) {
+  try {
+    const u = new URL(url, location.href);
+    return ["http:", "https:"].includes(u.protocol) ? u.href : "";
+  } catch (e) {
+    return "";
+  }
+}
+
+function urlFonte(ep) {
+  return urlSegura(ep.fonte_url || ep.url_video || "");
+}
+
+function usaSalaExterna(ep) {
+  const tipo = norm(ep.tipo_player);
+  const modo = norm(ep.modo_reproducao);
+  return TIPOS_SALA_EXTERNA.has(tipo) || MODOS_SALA_EXTERNA.has(modo);
+}
+
+function labelTipo(ep) {
+  if (usaSalaExterna(ep)) return "SALA EXTERNA";
+  return (ep.tipo_player || "externo").toUpperCase();
+}
+
 /* --- Renderizacao do video conforme tipo_player --- */
 function renderMedia(ep) {
   const mount = document.getElementById("media-mount");
   mount.innerHTML = "";
-  const tipo = ep.tipo_player;
+  const tipo = norm(ep.tipo_player);
+  const videoUrl = urlSegura(ep.url_video);
+
+  if (TIPOS_VIDEO_NATIVO.has(tipo) && !videoUrl) {
+    return fallbackExterno(ep, "URL de video invalida ou ausente.");
+  }
 
   if (tipo === "mp4" || tipo === "webm") {
     const v = document.createElement("video");
-    v.controls = true; v.autoplay = false; v.playsInline = true;
-    v.src = ep.url_video;
+    v.controls = true;
+    v.autoplay = false;
+    v.playsInline = true;
+    v.src = videoUrl;
     mount.appendChild(v);
     attachTracking(v, ep);
 
   } else if (tipo === "hls") {
     const v = document.createElement("video");
-    v.controls = true; v.playsInline = true;
+    v.controls = true;
+    v.playsInline = true;
     mount.appendChild(v);
     attachTracking(v, ep);
     if (v.canPlayType("application/vnd.apple.mpegurl")) {
-      v.src = ep.url_video;                       // Safari nativo
+      v.src = videoUrl;                       // Safari nativo
     } else if (window.Hls && window.Hls.isSupported()) {
       const hls = new Hls();
-      hls.loadSource(ep.url_video);
+      hls.loadSource(videoUrl);
       hls.attachMedia(v);
     } else {
       return fallbackExterno(ep, "Seu navegador nao suporta HLS.");
     }
 
-  } else if (tipo === "youtube" || tipo === "vimeo" || tipo === "archive") {
-    const f = document.createElement("iframe");
-    f.src = ep.url_video;
-    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-    f.allowFullscreen = true;
-    mount.appendChild(f);
+  } else if (TIPOS_IFRAME_OFICIAL.has(tipo)) {
+    renderIframeOficial(ep);
+
+  } else if (usaSalaExterna(ep)) {
+    renderSalaExterna(ep);
 
   } else { // externo ou desconhecido
     return fallbackExterno(ep);
   }
+}
+
+function renderIframeOficial(ep) {
+  const mount = document.getElementById("media-mount");
+  const src = urlSegura(ep.url_video);
+  if (!src) return fallbackExterno(ep, "URL de incorporacao invalida ou ausente.");
+
+  const f = document.createElement("iframe");
+  f.src = src;
+  f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+  f.allowFullscreen = true;
+  f.loading = "lazy";
+  f.referrerPolicy = "no-referrer";
+  mount.appendChild(f);
+}
+
+function renderSalaExterna(ep) {
+  const mount = document.getElementById("media-mount");
+  const src = urlFonte(ep);
+  if (!src) return fallbackExterno(ep, "URL da fonte invalida ou ausente.");
+
+  const room = document.createElement("div");
+  room.className = "source-room";
+
+  const f = document.createElement("iframe");
+  f.className = "source-frame";
+  f.src = src;
+  f.loading = "lazy";
+  f.referrerPolicy = "no-referrer";
+  f.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
+  f.allowFullscreen = true;
+  f.sandbox = "allow-scripts allow-same-origin allow-forms allow-popups allow-presentation";
+
+  const toolbar = document.createElement("div");
+  toolbar.className = "source-toolbar";
+  toolbar.innerHTML = `
+    <div>
+      <b>Fonte externa dentro do KagePlay</b>
+      <span>Se a fonte bloquear incorporacao, use o botao ao lado.</span>
+    </div>
+    <a class="btn btn-primary" href="${src}" target="_blank" rel="noopener">Abrir fonte ↗</a>`;
+
+  room.appendChild(f);
+  room.appendChild(toolbar);
+  mount.appendChild(room);
 }
 
 /* --- v2: rastrear progresso de video nativo (mp4/webm/hls) --- */
@@ -105,9 +190,10 @@ function attachTracking(v, ep) {
 }
 
 function fallbackExterno(ep, motivo) {
-  document.getElementById("ext-url").href = ep.url_video;
+  const href = urlFonte(ep) || "#";
+  document.getElementById("ext-url").href = href;
   document.getElementById("ext-motivo").textContent =
-    motivo || "Esta fonte nao permite reproducao dentro do site. Use o botao abaixo para abrir a fonte oficial/autorizada.";
+    motivo || "Esta fonte nao permite reproducao dentro do KagePlay. Use o botao abaixo para abrir a fonte oficial/autorizada.";
   showState("state-externo");
 }
 
@@ -120,9 +206,10 @@ function renderInfo() {
   document.getElementById("ep-desc").textContent = a.descricao || "";
 
   const pills = [];
-  pills.push(`<span class="pill">${ep.tipo_player.toUpperCase()}</span>`);
+  pills.push(`<span class="pill">${labelTipo(ep)}</span>`);
   pills.push(`<span class="pill">${a.fonte_principal}</span>`);
   pills.push(`<span class="pill ok">gratuito/autorizado</span>`);
+  if (usaSalaExterna(ep)) pills.push(`<span class="pill warn">tentativa de embed</span>`);
   if (ep.status_link !== "Ativo")
     pills.push(`<span class="pill warn">link: ${ep.status_link} (alerta operacional)</span>`);
   if (a.adulto_18) pills.push(`<span class="pill" style="color:var(--magenta)">18+</span>`);
@@ -175,10 +262,11 @@ function renderEplist() {
     const cur = e.episodio_num === ep.episodio_num ? "current" : "";
     const visto = KPStore.isVisto(a.anime_id, e.episodio_num);
     const href = `./player.html?anime=${a.anime_id}&ep=${e.episodio_num}`;
+    const status = visto ? "✓" : (el ? (usaSalaExterna(e) ? "▣" : "▶") : "⛔");
     return `<a class="ep ${cur} ${visto ? 'seen' : ''}" href="${href}">
         <span class="n">${e.episodio_num}</span>
         <span class="t">${e.titulo_episodio || 'Episodio ' + e.episodio_num}</span>
-        <span class="st">${visto ? '✓' : (el ? '▶' : '⛔')}</span>
+        <span class="st">${status}</span>
       </a>`;
   }).join("");
 }
@@ -225,8 +313,7 @@ async function start() {
   // 7-8. conteudo adulto -> confirmacao de idade
   const play = () => {
     showState(null);
-    if (PL.ep.tipo_player === "externo") fallbackExterno(PL.ep);
-    else renderMedia(PL.ep);
+    renderMedia(PL.ep);
   };
 
   if (PL.anime.adulto_18 || PL.ep.adulto_18) {
