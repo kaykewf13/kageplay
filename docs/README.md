@@ -84,3 +84,55 @@ Nenhum dado sai do navegador. Para zerar: limpar os dados do site no navegador.
 `vitrine/index.html` — landing page de apresentacao (camada "Vitrine" do projeto).
 No deploy final, a vitrine vai no dominio principal e o app no subdominio `app.`.
 Localmente, os botoes da vitrine apontam para `./index.html` (o app).
+
+## Catálogo via AniList (v3)
+
+O catálogo principal agora é gerado da **AniList** (metadados oficiais), cobrindo
+todas as categorias por popularidade/nota. ~4.5 mil títulos.
+
+- `scripts/fetch_anilist.py` — coleta paginada (respeita rate limit 30/min), salva raw.
+- `scripts/build_from_anilist.py` — transforma o raw em `catalog.json`.
+
+Cada título entra como player **externo**, com link para a **fonte oficial de streaming**
+(Crunchyroll, Netflix, etc.) ou para a página do AniList. Nenhuma fonte pirata é usada.
+Títulos Ecchi/adultos vão para a área 18+ separada (ocultos do catálogo principal).
+
+Para regerar/atualizar:
+```bash
+python scripts/fetch_anilist.py 90        # coleta (ajuste o nº de páginas)
+python scripts/build_from_anilist.py      # gera catalog.json
+```
+
+O front-end usa renderização paginada (scroll infinito, lotes de 60) para
+aguentar milhares de títulos sem travar no celular.
+
+## Idioma — Dublado / Legendado (v3.1)
+
+A AniList nao informa de forma confiavel se um titulo tem dublagem PT-BR.
+Por isso o idioma e curado em `data/idiomas.json`:
+- `padrao`: idioma de quem nao esta marcado (Legendados).
+- `dublados_termos`: lista de termos de titulo que marcam Dublados (PT-BR). Edite a vontade.
+- `dublados_ids`: ids especificos (al-XXXX) marcados como Dublados.
+
+O `build_from_anilist.py` aplica essa curadoria e a automacao semanal a preserva.
+O site ganha um filtro "Idioma: Dublados / Legendados" na home.
+
+## Atualizacao automatica semanal (GitHub Actions)
+
+`.github/workflows/atualizar-catalogo.yml` roda toda semana (domingo 06:00 UTC) e
+tambem manualmente (aba Actions > Run workflow). Ele coleta do AniList, regera o
+catalogo (preservando a curadoria de idioma) e commita. O commit dispara o deploy
+do Pages automaticamente. Nenhuma acao manual recorrente e necessaria.
+
+## Catálogo unificado (v3.2)
+
+A antiga "área 18+ separada" foi removida. Agora há **uma estrutura só**:
+títulos adultos (Ecchi/sugestivos) aparecem no catálogo principal, com suas
+categorias visíveis no menu (Ecchi 18+, Adulto 18+, Romance Adulto 18+).
+
+Como o site é público, há **uma confirmação de idade única na entrada**
+(salva por sessão no navegador) — não é uma seção separada, apenas um aviso.
+
+Observação: o pipeline continua **não** coletando hentai/pornografia explícita
+(filtro `isAdult:false` no AniList). O conteúdo "adulto" do catálogo é
+material sugestivo de plataformas mainstream, não pornográfico.
