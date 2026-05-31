@@ -26,8 +26,10 @@ except ImportError:
 def norm(v):
     return ("" if v is None else str(v)).strip()
 
+
 def sim(v):
     return norm(v).lower() in ("sim", "yes", "true", "1")
+
 
 def slugify(s):
     s = norm(s).lower()
@@ -36,6 +38,7 @@ def slugify(s):
     s = re.sub(r"[úü]", "u", s);   s = re.sub(r"ç", "c", s)
     s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
     return s
+
 
 def read_sheet(wb, name):
     """Le uma aba como lista de dicts usando a 1a linha como cabecalho."""
@@ -93,7 +96,9 @@ def build(xlsx_path, out_dir):
                 "episodio_num": int(norm(e.get("episodio_num")) or 0),
                 "titulo_episodio": norm(e.get("titulo_episodio")),
                 "url_video": norm(e.get("url_video")),
+                "fonte_url": norm(e.get("fonte_url")) or norm(e.get("url_fonte")),
                 "tipo_player": norm(e.get("tipo_player")) or "externo",
+                "modo_reproducao": norm(e.get("modo_reproducao")) or "interno",
                 "gratuito_autorizado": "Sim" if sim(e.get("gratuito_autorizado")) else "Nao",
                 "drm_paywall": "Sim" if sim(e.get("drm_paywall")) else "Nao",
                 "publicar": "Sim" if sim(e.get("publicar")) else "Nao",
@@ -121,7 +126,7 @@ def build(xlsx_path, out_dir):
             "episodios": eps_out,
         })
 
-    catalog = {"versao": "2.0", "atualizado_em": str(date.today()), "animes": animes_out}
+    catalog = {"versao": "2.1", "atualizado_em": str(date.today()), "animes": animes_out}
 
     # ---- categorias ----
     cats_out = []
@@ -136,7 +141,7 @@ def build(xlsx_path, out_dir):
             "mostrar_menu": sim(c.get("mostrar_menu")),
             "template_canva": norm(c.get("template_canva")) or "categoria_padrao",
         })
-    categories = {"versao": "2.0", "atualizado_em": str(date.today()), "categorias": cats_out}
+    categories = {"versao": "2.1", "atualizado_em": str(date.today()), "categorias": cats_out}
 
     # ---- playlist.m3u (apenas elegiveis e mp4/hls/webm) ----
     m3u = ["#EXTM3U"]
