@@ -1,0 +1,19 @@
+{
+  "_doc": "Curadoria de idioma. Anime cujo titulo contem algum 'dublados_termos' (ou cujo id esta em 'dublados_ids') e marcado como Dublados (PT-BR). Os demais ficam como Legendados. Edite esta lista livremente — o build e a automacao semanal preservam.",
+  "padrao": "Legendados",
+  "dublados_termos": [
+    "one piece", "naruto", "boruto", "dragon ball", "bleach",
+    "demon slayer", "kimetsu no yaiba", "jujutsu kaisen", "chainsaw man",
+    "attack on titan", "shingeki no kyojin", "my hero academia", "boku no hero",
+    "spy x family", "spy family", "black clover", "hunter x hunter",
+    "fullmetal alchemist", "death note", "one punch man", "mob psycho",
+    "dr. stone", "dr stone", "fire force", "seven deadly sins", "nanatsu no taizai",
+    "re:zero", "re zero", "overlord", "tensei shitara slime", "slime",
+    "sword art online", "tower of god", "solo leveling", "vinland saga",
+    "tokyo revengers", "tokyo ghoul", "blue lock", "haikyu", "yu yu hakusho",
+    "saint seiya", "cavaleiros do zodiaco", "pokemon", "digimon", "sailor moon",
+    "code geass", "steins;gate", "steins gate", "the rising of the shield hero",
+    "shield hero", "kaguya-sama", "horimiya", "komi", "frieren"
+  ],
+  "dublados_ids": []
+}
