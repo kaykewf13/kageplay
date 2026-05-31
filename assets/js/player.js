@@ -8,8 +8,8 @@ const PL = { catalog: null, policy: null, anime: null, ep: null };
 
 const TIPOS_VIDEO_NATIVO = new Set(["mp4", "webm", "hls"]);
 const TIPOS_IFRAME_OFICIAL = new Set(["youtube", "vimeo", "archive"]);
-const TIPOS_SALA_EXTERNA = new Set(["iframe", "embed", "site", "fonte", "fonte_externa", "externo_embed", "iframe_tentativa"]);
-const MODOS_SALA_EXTERNA = new Set(["embed", "iframe", "iframe_tentativa", "sala_externa", "assistir_na_fonte"]);
+const TIPOS_SALA_EXTERNA = new Set(["externo", "iframe", "embed", "site", "fonte", "fonte_externa", "externo_embed", "iframe_tentativa"]);
+const MODOS_SALA_EXTERNA = new Set(["externo", "embed", "iframe", "iframe_tentativa", "sala_externa", "assistir_na_fonte"]);
 
 function norm(v) {
   return (v || "").toString().trim().toLowerCase();
@@ -98,7 +98,7 @@ function renderMedia(ep) {
   } else if (usaSalaExterna(ep)) {
     renderSalaExterna(ep);
 
-  } else { // externo ou desconhecido
+  } else { // desconhecido
     return fallbackExterno(ep);
   }
 }
@@ -142,7 +142,7 @@ function renderSalaExterna(ep) {
   toolbar.innerHTML = `
     <div>
       <b style="display:block;font-size:.9rem;color:var(--ink);">Fonte externa dentro do KagePlay</b>
-      <span style="display:block;margin-top:2px;font-size:.78rem;color:var(--ink-soft);">Se a fonte bloquear incorporacao, use o botao ao lado.</span>
+      <span style="display:block;margin-top:2px;font-size:.78rem;color:var(--ink-soft);">O player esta sendo carregado na mesma pagina. Se a fonte bloquear, use o botao ao lado.</span>
     </div>
     <a class="btn btn-primary" style="white-space:nowrap;padding:9px 13px;" href="${src}" target="_blank" rel="noopener">Abrir fonte ↗</a>`;
 
