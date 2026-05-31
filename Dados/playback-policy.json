@@ -1,0 +1,39 @@
+{
+  "versao": "2.0",
+  "atualizado_em": "2026-05-30",
+  "descricao": "Regras tecnicas de reproducao do player KagePlay. O player so executa quando as tres condicoes principais sao verdadeiras.",
+  "regra_elegibilidade": {
+    "gratuito_autorizado": "Sim",
+    "drm_paywall": "Nao",
+    "publicar": "Sim"
+  },
+  "observacao_status_link": "status_link NAO bloqueia o player. Ele gera apenas alerta/bloqueio operacional na planilha.",
+  "tipos_player": {
+    "mp4":     { "executa_interno": true,  "condicao": "Link direto autorizado e gratuito." },
+    "webm":    { "executa_interno": true,  "condicao": "Link direto autorizado e gratuito." },
+    "hls":     { "executa_interno": true,  "condicao": "Link .m3u8 autorizado e gratuito.", "lib": "hls.js" },
+    "youtube": { "executa_interno": true,  "condicao": "Video publico com incorporacao permitida." },
+    "vimeo":   { "executa_interno": true,  "condicao": "Dono do video precisa permitir incorporacao." },
+    "archive": { "executa_interno": true,  "condicao": "Conteudo publico/incorporavel do Internet Archive." },
+    "externo": { "executa_interno": false, "condicao": "Abrir fonte oficial/autorizada em nova aba quando o site nao permitir iframe." }
+  },
+  "nao_permitido": [
+    "Conteudo com DRM",
+    "Conteudo com paywall",
+    "Conteudo pago sem autorizacao",
+    "Fonte pirata",
+    "Captura de stream",
+    "Bypass de iframe",
+    "Remocao de protecao"
+  ],
+  "regras_18": {
+    "exige_confirmacao_idade": true,
+    "fora_do_menu_principal": true,
+    "mensagem_aviso": "Esta area contem conteudo adulto. Voce confirma ter 18 anos ou mais?",
+    "conteudo_bloqueado_por_seguranca": [
+      "Conteudo envolvendo menores",
+      "Personagens infantilizados em contexto sexual",
+      "Loli", "Shota", "Coercao", "Exploracao", "Violencia sexual", "Material ilegal"
+    ]
+  }
+}
