@@ -1,5 +1,5 @@
 {
-  "versao": "2.0",
+  "versao": "2.2",
   "atualizado_em": "2026-05-31",
   "categorias": [
     {
@@ -206,6 +206,238 @@
       "grupo": "Genero",
       "categoria": "Magia",
       "slug": "magia",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Subgenero",
+      "categoria": "Shoujo",
+      "slug": "shoujo",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Vida Escolar",
+      "slug": "vida-escolar",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Ficcao Cientifica",
+      "slug": "ficcao-cientifica",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Subgenero",
+      "categoria": "Seinen",
+      "slug": "seinen",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Jogos",
+      "slug": "jogos",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Superpoder",
+      "slug": "superpoder",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Artes Marciais",
+      "slug": "artes-marciais",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Demonio",
+      "slug": "demonio",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Subgenero",
+      "categoria": "Josei",
+      "slug": "josei",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Militar",
+      "slug": "militar",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Samurai",
+      "slug": "samurai",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Historico",
+      "slug": "historico",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Cartoon",
+      "slug": "cartoon",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Comedia Romantica",
+      "slug": "comedia-romantica",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Subgenero",
+      "categoria": "Harem",
+      "slug": "harem",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Vampiros",
+      "slug": "vampiros",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Thriller",
+      "slug": "thriller",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Terror",
+      "slug": "terror",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Crime",
+      "slug": "crime",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Animacao",
+      "slug": "animacao",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Action & Adventure",
+      "slug": "action-adventure",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Sci-Fi & Fantasy",
+      "slug": "sci-fi-fantasy",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Kids",
+      "slug": "kids",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "War & Politics",
+      "slug": "war-politics",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Familia",
+      "slug": "familia",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Genero",
+      "categoria": "Faroeste",
+      "slug": "faroeste",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Subgenero",
+      "categoria": "Yuri",
+      "slug": "yuri",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Subgenero",
+      "categoria": "Shoujo-ai",
+      "slug": "shoujo-ai",
+      "adulto_18": false,
+      "mostrar_menu": true,
+      "template_canva": "categoria_padrao"
+    },
+    {
+      "grupo": "Subgenero",
+      "categoria": "Shounen-ai",
+      "slug": "shounen-ai",
       "adulto_18": false,
       "mostrar_menu": true,
       "template_canva": "categoria_padrao"
