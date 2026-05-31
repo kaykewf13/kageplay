@@ -1,5 +1,5 @@
 {
-  "versao": "2.2",
+  "versao": "2.3",
   "atualizado_em": "2026-05-31",
   "categorias": [
     {
@@ -136,6 +136,22 @@
       "slug": "romance-adulto-18",
       "adulto_18": true,
       "mostrar_menu": true,
+      "template_canva": "categoria_18"
+    },
+    {
+      "grupo": "Adulto 18+",
+      "categoria": "Hentai 18+",
+      "slug": "hentai-18",
+      "adulto_18": true,
+      "mostrar_menu": true,
+      "template_canva": "categoria_18"
+    },
+    {
+      "grupo": "Fonte",
+      "categoria": "AnimePlayer +18",
+      "slug": "animeplayer-18",
+      "adulto_18": true,
+      "mostrar_menu": false,
       "template_canva": "categoria_18"
     },
     {
