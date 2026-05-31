@@ -8,7 +8,7 @@ const KP = {
   catalog: null,
   categories: null,
   policy: null,
-  state: { query: "", cat: "todos", soFavoritos: false }
+  state: { query: "", cat: "todos", idioma: "todos", soFavoritos: false }
 };
 
 function epElegivel(ep) {
@@ -86,8 +86,11 @@ function applyFilters(list) {
   const cat = KP.state.cat;
   return list.filter(a => {
     if (!animePublicavel(a)) return false;
-    if (a.adulto_18) return false;
     if (KP.state.soFavoritos && !KPStore.isFavorito(a.anime_id)) return false;
+    if (KP.state.idioma !== "todos") {
+      const idi = a.idioma || "Legendados";
+      if (idi !== KP.state.idioma) return false;
+    }
     if (cat !== "todos") {
       const all = [a.categoria_principal, ...(a.categorias_secundarias || [])].map(c => c.toLowerCase());
       if (!all.includes(cat.toLowerCase())) return false;
@@ -100,17 +103,49 @@ function applyFilters(list) {
   });
 }
 
+const PAGE_SIZE = 60;
+KP._filtered = [];
+KP._shown = 0;
+
 function renderGrid() {
   const grid = document.getElementById("grid");
-  const list = applyFilters(KP.catalog.animes);
-  if (!list.length) {
+  KP._filtered = applyFilters(KP.catalog.animes);
+  KP._shown = 0;
+  const counter = document.getElementById("counter");
+  if (counter) counter.textContent = `${KP._filtered.length} titulos`;
+
+  if (!KP._filtered.length) {
     const msg = KP.state.soFavoritos
       ? "Voce ainda nao favoritou nenhum titulo. Toque na estrela ☆ de um card."
       : "Nenhum titulo encontrado com esses filtros.";
     grid.innerHTML = `<div class="empty">${msg}</div>`;
     return;
   }
-  grid.innerHTML = list.map(cardHTML).join("");
+  grid.innerHTML = "";
+  appendPage();
+}
+
+function appendPage() {
+  const grid = document.getElementById("grid");
+  const next = KP._filtered.slice(KP._shown, KP._shown + PAGE_SIZE);
+  grid.insertAdjacentHTML("beforeend", next.map(cardHTML).join(""));
+  KP._shown += next.length;
+  // sentinela para scroll infinito
+  let sent = document.getElementById("sentinel");
+  if (KP._shown < KP._filtered.length) {
+    if (!sent) {
+      sent = document.createElement("div");
+      sent.id = "sentinel"; sent.style.cssText = "grid-column:1/-1;height:1px";
+      grid.after(sent);
+      KP._io = new IntersectionObserver((es) => {
+        if (es[0].isIntersecting) appendPage();
+      }, { rootMargin: "600px" });
+      KP._io.observe(sent);
+    }
+  } else if (sent) {
+    KP._io && KP._io.disconnect();
+    sent.remove();
+  }
 }
 
 /* ---------- Secao: Continuar assistindo ---------- */
@@ -119,7 +154,7 @@ function renderContinuar() {
   if (!wrap) return;
   const itens = KPStore.continuarAssistindo()
     .map(p => ({ p, a: animeById(p.anime) }))
-    .filter(x => x.a && !x.a.adulto_18 && !KPStore.isVisto(x.p.anime, x.p.ep))
+    .filter(x => x.a && !KPStore.isVisto(x.p.anime, x.p.ep))
     .slice(0, 12);
 
   if (!itens.length) { wrap.innerHTML = ""; wrap.style.display = "none"; return; }
@@ -156,7 +191,7 @@ function renderContinuar() {
 function renderChips() {
   const box = document.getElementById("chips");
   const menuCats = KP.categories.categorias
-    .filter(c => c.mostrar_menu && c.grupo === "Genero")
+    .filter(c => c.mostrar_menu && (c.grupo === "Genero" || c.grupo === "Adulto 18+"))
     .map(c => c.categoria);
   const all = ["todos", ...menuCats];
   box.innerHTML =
@@ -182,6 +217,23 @@ function renderChips() {
     else { box.querySelector('[data-cat="todos"]').classList.add("active"); }
     renderGrid();
   });
+
+  // seletor de idioma (grupo separado)
+  const idioBox = document.getElementById("idiomas");
+  if (idioBox) {
+    const opts = [["todos", "Todos os idiomas"], ["Dublados", "🎙 Dublados"], ["Legendados", "💬 Legendados"]];
+    idioBox.innerHTML = `<span class="idio-label">Idioma:</span>` + opts.map(([v, t]) =>
+      `<button class="chip mini ${v === 'todos' ? 'active' : ''}" data-idioma="${v}">${t}</button>`
+    ).join("");
+    idioBox.querySelectorAll("[data-idioma]").forEach(ch => {
+      ch.addEventListener("click", () => {
+        idioBox.querySelectorAll(".chip").forEach(x => x.classList.remove("active"));
+        ch.classList.add("active");
+        KP.state.idioma = ch.dataset.idioma;
+        renderGrid();
+      });
+    });
+  }
 }
 
 function bindSearch() {
@@ -213,9 +265,6 @@ async function initHome() {
     bindFavClicks();
     renderContinuar();
     renderGrid();
-    const total = KP.catalog.animes.filter(animePublicavel).filter(a => !a.adulto_18).length;
-    const counter = document.getElementById("counter");
-    if (counter) counter.textContent = `${total} titulos publicados`;
   } catch (err) {
     document.getElementById("grid").innerHTML =
       `<div class="empty">Erro ao carregar o catalogo.<br><small>${err.message}</small></div>`;
