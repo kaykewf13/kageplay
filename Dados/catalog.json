@@ -1,0 +1,152 @@
+
+{
+  "versao": "2.0",
+  "atualizado_em": "2026-05-30",
+  "animes": [
+    {
+      "anime_id": "anime-demo-01",
+      "titulo": "Demo: Big Buck Bunny",
+      "slug": "demo-big-buck-bunny",
+      "categoria_principal": "Aventura",
+      "categorias_secundarias": [
+        "Comedia",
+        "Slice of Life"
+      ],
+      "adulto_18": false,
+      "status": "Completo",
+      "publicar": "Sim",
+      "descricao": "Curta de animacao em dominio publico (Blender).",
+      "capa_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Big_buck_bunny_poster_big.jpg/480px-Big_buck_bunny_poster_big.jpg",
+      "banner_url": "",
+      "fonte_principal": "Internet Archive",
+      "episodios": [
+        {
+          "episodio_num": 1,
+          "titulo_episodio": "Filme completo",
+          "url_video": "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
+          "tipo_player": "mp4",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        }
+      ]
+    },
+    {
+      "anime_id": "anime-demo-02",
+      "titulo": "Demo: Sintel",
+      "slug": "demo-sintel",
+      "categoria_principal": "Fantasia",
+      "categorias_secundarias": [
+        "Aventura",
+        "Drama"
+      ],
+      "adulto_18": false,
+      "status": "Completo",
+      "publicar": "Sim",
+      "descricao": "Curta de fantasia em dominio publico (Blender).",
+      "capa_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Sintel_poster.jpg/480px-Sintel_poster.jpg",
+      "banner_url": "",
+      "fonte_principal": "Internet Archive",
+      "episodios": [
+        {
+          "episodio_num": 1,
+          "titulo_episodio": "Filme completo",
+          "url_video": "https://archive.org/download/Sintel/sintel-2048-surround.mp4",
+          "tipo_player": "mp4",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        }
+      ]
+    },
+    {
+      "anime_id": "anime-demo-03",
+      "titulo": "Demo: Tears of Steel",
+      "slug": "demo-tears-of-steel",
+      "categoria_principal": "Sci-Fi",
+      "categorias_secundarias": [
+        "Acao"
+      ],
+      "adulto_18": false,
+      "status": "Completo",
+      "publicar": "Sim",
+      "descricao": "Curta sci-fi em dominio publico (Blender). Teste HLS.",
+      "capa_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tos-poster.png/480px-Tos-poster.png",
+      "banner_url": "",
+      "fonte_principal": "Fonte Autorizada",
+      "episodios": [
+        {
+          "episodio_num": 1,
+          "titulo_episodio": "Filme completo (HLS)",
+          "url_video": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+          "tipo_player": "hls",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        }
+      ]
+    },
+    {
+      "anime_id": "anime-demo-04",
+      "titulo": "Demo: Embed YouTube Oficial",
+      "slug": "demo-embed-youtube",
+      "categoria_principal": "Comedia",
+      "categorias_secundarias": [
+        "Slice of Life"
+      ],
+      "adulto_18": false,
+      "status": "Em lancamento",
+      "publicar": "Sim",
+      "descricao": "Fonte de canal oficial no YouTube com embed liberado.",
+      "capa_url": "https://placehold.co/480x720/1a1a2e/ffd700?text=YouTube",
+      "banner_url": "",
+      "fonte_principal": "YouTube Oficial",
+      "episodios": [
+        {
+          "episodio_num": 1,
+          "titulo_episodio": "Trailer oficial (embed)",
+          "url_video": "https://www.youtube.com/embed/aqz-KE-bpKQ",
+          "tipo_player": "youtube",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        }
+      ]
+    },
+    {
+      "anime_id": "anime-demo-05",
+      "titulo": "Demo: Fonte Externa Bloqueada",
+      "slug": "demo-fonte-externa",
+      "categoria_principal": "Drama",
+      "categorias_secundarias": [],
+      "adulto_18": false,
+      "status": "Em revisao",
+      "publicar": "Sim",
+      "descricao": "Fonte sem player interno: abre apenas fonte oficial.",
+      "capa_url": "https://placehold.co/480x720/2e1a1a/ff6b6b?text=Externa",
+      "banner_url": "",
+      "fonte_principal": "Fonte Autorizada",
+      "episodios": [
+        {
+          "episodio_num": 1,
+          "titulo_episodio": "Assistir na fonte oficial",
+          "url_video": "https://archive.org/details/BigBuckBunny_124",
+          "tipo_player": "externo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Revisar",
+          "adulto_18": false
+        }
+      ]
+    }
+  ]
+}
