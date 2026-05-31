@@ -59,6 +59,7 @@ function labelTipo(ep) {
 function renderMedia(ep) {
   const mount = document.getElementById("media-mount");
   mount.innerHTML = "";
+  mount.style.cssText = "position:absolute;inset:0;width:100%;height:100%;";
   const tipo = norm(ep.tipo_player);
   const videoUrl = urlSegura(ep.url_video);
 
@@ -123,6 +124,7 @@ function renderSalaExterna(ep) {
 
   const room = document.createElement("div");
   room.className = "source-room";
+  room.style.cssText = "position:relative;width:100%;height:100%;background:#050508;";
 
   const f = document.createElement("iframe");
   f.className = "source-frame";
@@ -132,15 +134,17 @@ function renderSalaExterna(ep) {
   f.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
   f.allowFullscreen = true;
   f.sandbox = "allow-scripts allow-same-origin allow-forms allow-popups allow-presentation";
+  f.style.cssText = "width:100%;height:100%;border:0;display:block;";
 
   const toolbar = document.createElement("div");
   toolbar.className = "source-toolbar";
+  toolbar.style.cssText = "position:absolute;left:14px;right:14px;bottom:14px;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(12,12,20,.86);backdrop-filter:blur(12px);";
   toolbar.innerHTML = `
     <div>
-      <b>Fonte externa dentro do KagePlay</b>
-      <span>Se a fonte bloquear incorporacao, use o botao ao lado.</span>
+      <b style="display:block;font-size:.9rem;color:var(--ink);">Fonte externa dentro do KagePlay</b>
+      <span style="display:block;margin-top:2px;font-size:.78rem;color:var(--ink-soft);">Se a fonte bloquear incorporacao, use o botao ao lado.</span>
     </div>
-    <a class="btn btn-primary" href="${src}" target="_blank" rel="noopener">Abrir fonte ↗</a>`;
+    <a class="btn btn-primary" style="white-space:nowrap;padding:9px 13px;" href="${src}" target="_blank" rel="noopener">Abrir fonte ↗</a>`;
 
   room.appendChild(f);
   room.appendChild(toolbar);
