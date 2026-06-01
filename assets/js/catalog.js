@@ -11,6 +11,13 @@ const KP = {
   state: { query: "", cat: "todos", idioma: "todos", soFavoritos: false }
 };
 
+const KP_DATA_VERSION = Date.now().toString();
+
+function noCache(path) {
+  const sep = path.includes("?") ? "&" : "?";
+  return `${path}${sep}v=${KP_DATA_VERSION}`;
+}
+
 function epElegivel(ep) {
   return ep.gratuito_autorizado === "Sim"
       && ep.drm_paywall === "Nao"
@@ -18,33 +25,60 @@ function epElegivel(ep) {
 }
 function animePublicavel(a) { return a.publicar === "Sim"; }
 
+async function fetchJsonNoCache(path) {
+  const r = await fetch(noCache(path), { cache: "no-store" });
+  if (!r.ok) throw new Error(`${path} retornou HTTP ${r.status}`);
+  return r.json();
+}
+
 async function loadData() {
   const [cat, cats, pol] = await Promise.all([
-    fetch("./data/catalog.json").then(r => r.json()),
-    fetch("./data/categories.json").then(r => r.json()),
-    fetch("./data/playback-policy.json").then(r => r.json())
+    fetchJsonNoCache("./data/catalog.json"),
+    fetchJsonNoCache("./data/categories.json"),
+    fetchJsonNoCache("./data/playback-policy.json").catch(() => ({}))
   ]);
-  KP.catalog = cat; KP.categories = cats; KP.policy = pol;
+  KP.catalog = cat;
+  KP.categories = cats;
+  KP.policy = pol;
+
+  console.info("KagePlay catalog carregado", {
+    versao: cat.versao,
+    atualizado_em: cat.atualizado_em,
+    titulos: cat.animes?.length || 0,
+    fonte: cat.fonte_catalogo || "manual"
+  });
 }
 
 function animeById(id) {
   return KP.catalog.animes.find(a => a.anime_id === id);
 }
 
+function tipoFonteExterna(ep) {
+  const tipo = (ep?.tipo_player || "").toLowerCase();
+  const modo = (ep?.modo_reproducao || "").toLowerCase();
+  return ["externo", "iframe", "embed", "site", "fonte", "fonte_externa", "externo_embed", "iframe_tentativa"].includes(tipo)
+      || ["externo", "embed", "iframe", "iframe_tentativa", "sala_externa", "assistir_na_fonte", "player_only"].includes(modo);
+}
+
+function badgeLabel(a, ep) {
+  if (a.adulto_18) return `<span class="badge adult">18+</span>`;
+  if (tipoFonteExterna(ep)) return `<span class="badge ext">Fonte externa</span>`;
+  if (a.fonte_principal === "SUGOIAPI") return `<span class="badge">SUGOIAPI</span>`;
+  return `<span class="badge">${a.status || "Ativo"}</span>`;
+}
+
+function playerLabel(ep) {
+  if (!epElegivel(ep || {})) return "Indisponivel";
+  return tipoFonteExterna(ep) ? "Assistir" : "Assistir";
+}
+
 /* ---------- Card ---------- */
 function cardHTML(a) {
   const ep1 = a.episodios?.[0];
   const elegivel = ep1 && epElegivel(ep1);
-  const externo = ep1?.tipo_player === "externo";
   const tags = [a.categoria_principal, ...(a.categorias_secundarias || [])].slice(0, 3).join(" • ");
 
-  let badge = "";
-  if (a.adulto_18) badge = `<span class="badge adult">18+</span>`;
-  else if (externo) badge = `<span class="badge ext">Fonte oficial</span>`;
-  else badge = `<span class="badge">${a.status}</span>`;
-
   const playUrl = `./player.html?anime=${encodeURIComponent(a.anime_id)}&ep=${ep1?.episodio_num || 1}`;
-  const playLabel = externo ? "Abrir fonte" : "Assistir";
 
   // v2: estado pessoal
   const fav = KPStore.isFavorito(a.anime_id);
@@ -60,7 +94,7 @@ function cardHTML(a) {
   return `
     <article class="card" data-id="${a.anime_id}">
       <div class="thumb">
-        ${badge}
+        ${badgeLabel(a, ep1)}
         <button class="fav ${fav ? 'on' : ''}" data-fav="${a.anime_id}"
                 title="${fav ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}"
                 aria-label="favorito">${fav ? '★' : '☆'}</button>
@@ -73,9 +107,9 @@ function cardHTML(a) {
         <div class="tags">${tags}</div>
         <div class="meta">
           <span class="dot" style="background:${elegivel ? 'var(--ok)' : 'var(--warn)'}"></span>
-          ${a.fonte_principal} ${vistoTag}
+          ${a.fonte_principal || "KagePlay"} ${vistoTag}
         </div>
-        <a class="play" href="${playUrl}">${playLabel}</a>
+        <a class="play" href="${playUrl}">${playerLabel(ep1)}</a>
       </div>
     </article>`;
 }
@@ -92,11 +126,11 @@ function applyFilters(list) {
       if (idi !== KP.state.idioma) return false;
     }
     if (cat !== "todos") {
-      const all = [a.categoria_principal, ...(a.categorias_secundarias || [])].map(c => c.toLowerCase());
+      const all = [a.categoria_principal, ...(a.categorias_secundarias || [])].map(c => (c || "").toLowerCase());
       if (!all.includes(cat.toLowerCase())) return false;
     }
     if (q) {
-      const hay = (a.titulo + " " + a.descricao + " " + a.categoria_principal).toLowerCase();
+      const hay = (a.titulo + " " + a.descricao + " " + a.categoria_principal + " " + (a.categorias_secundarias || []).join(" ")).toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -109,7 +143,7 @@ KP._shown = 0;
 
 function renderGrid() {
   const grid = document.getElementById("grid");
-  KP._filtered = applyFilters(KP.catalog.animes);
+  KP._filtered = applyFilters(KP.catalog.animes || []);
   KP._shown = 0;
   const counter = document.getElementById("counter");
   if (counter) counter.textContent = `${KP._filtered.length} titulos`;
@@ -130,7 +164,6 @@ function appendPage() {
   const next = KP._filtered.slice(KP._shown, KP._shown + PAGE_SIZE);
   grid.insertAdjacentHTML("beforeend", next.map(cardHTML).join(""));
   KP._shown += next.length;
-  // sentinela para scroll infinito
   let sent = document.getElementById("sentinel");
   if (KP._shown < KP._filtered.length) {
     if (!sent) {
@@ -190,10 +223,10 @@ function renderContinuar() {
 /* ---------- Chips ---------- */
 function renderChips() {
   const box = document.getElementById("chips");
-  const menuCats = KP.categories.categorias
+  const menuCats = (KP.categories.categorias || [])
     .filter(c => c.mostrar_menu && (c.grupo === "Genero" || c.grupo === "Adulto 18+"))
     .map(c => c.categoria);
-  const all = ["todos", ...menuCats];
+  const all = ["todos", ...new Set(menuCats)];
   box.innerHTML =
     `<button class="chip fav-chip" data-fav-filter="1">★ Favoritos</button>` +
     all.map(c =>
@@ -218,7 +251,6 @@ function renderChips() {
     renderGrid();
   });
 
-  // seletor de idioma (grupo separado)
   const idioBox = document.getElementById("idiomas");
   if (idioBox) {
     const opts = [["todos", "Todos os idiomas"], ["Dublados", "🎙 Dublados"], ["Legendados", "💬 Legendados"]];
@@ -242,7 +274,6 @@ function bindSearch() {
   input.addEventListener("input", e => { KP.state.query = e.target.value; renderGrid(); });
 }
 
-/* clique no coracao (event delegation, pois o grid e re-renderizado) */
 function bindFavClicks() {
   const grid = document.getElementById("grid");
   grid.addEventListener("click", e => {
@@ -252,7 +283,6 @@ function bindFavClicks() {
     const on = KPStore.toggleFavorito(btn.dataset.fav);
     btn.classList.toggle("on", on);
     btn.textContent = on ? "★" : "☆";
-    // se estiver no filtro de favoritos, re-renderiza para sumir o card removido
     if (KP.state.soFavoritos) renderGrid();
   });
 }
@@ -266,6 +296,7 @@ async function initHome() {
     renderContinuar();
     renderGrid();
   } catch (err) {
+    console.error("Erro ao carregar catalogo KagePlay", err);
     document.getElementById("grid").innerHTML =
       `<div class="empty">Erro ao carregar o catalogo.<br><small>${err.message}</small></div>`;
   }
