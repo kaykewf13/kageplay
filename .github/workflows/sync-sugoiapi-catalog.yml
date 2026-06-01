@@ -1,0 +1,52 @@
+name: Sync SUGOIAPI catalog
+
+on:
+  workflow_dispatch:
+    inputs:
+      allow_tokenized_urls:
+        description: "Permitir URLs tokenizadas/privadas, ex: api.put.io/oauth_token. Use apenas em ambiente pessoal/controlado."
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      include_movies:
+        description: "Incluir filmes/VOD além de séries."
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+  schedule:
+    - cron: "30 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout KagePlay
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build catalog from SUGOIAPI
+        env:
+          SUGOIAPI_M3U_URL: ${{ vars.SUGOIAPI_M3U_URL || 'https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u' }}
+          ALLOW_TOKENIZED_URLS: ${{ github.event.inputs.allow_tokenized_urls == 'true' && '1' || '0' }}
+          INCLUDE_MOVIES: ${{ github.event.inputs.include_movies == 'true' && '1' || '0' }}
+        run: |
+          python scripts/build_catalog_from_sugoiapi.py --out data/catalog.json
+
+      - name: Commit catalog update
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "data: sync KagePlay catalog from SUGOIAPI"
+          file_pattern: data/catalog.json
