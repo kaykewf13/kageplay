@@ -1,24 +1,84 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-06-01 02:06:17.792622Z",
+  "atualizado_em": "2026-06-01 09:01:32.505057Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
   "validate_links": true,
-  "itens_lidos": 807,
-  "titulos_publicados": 125,
-  "episodios_publicados": 672,
+  "itens_lidos": 810,
+  "titulos_publicados": 126,
+  "episodios_publicados": 667,
   "contadores": {
     "private_skipped": 0,
     "non_media_skipped": 0,
     "live_skipped": 6
   },
   "validacao": {
-    "urls_verificadas": 807,
-    "urls_validas": 783,
-    "urls_invalidas": 24
+    "urls_verificadas": 810,
+    "urls_validas": 773,
+    "urls_invalidas": 37
   },
   "invalidos_amostra": [
+    {
+      "name": "16bit Sensation - Another Layer S01 E04",
+      "url": "https://api.put.io/v2/files/1585024119/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 502,
+        "reason": "HTTPError 502",
+        "method": "HEAD"
+      }
+    },
+    {
+      "name": "Boku no Hero Academia S01 E160",
+      "url": "https://api.put.io/v2/files/1585101178/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 502,
+        "reason": "HTTPError 502",
+        "method": "HEAD"
+      }
+    },
+    {
+      "name": "Chainsaw Man - The Compilation S01 E02",
+      "url": "https://api.put.io/v2/files/1584831608/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 502,
+        "reason": "HTTPError 502",
+        "method": "HEAD"
+      }
+    },
+    {
+      "name": "Dandadan S01 E01",
+      "url": "https://api.put.io/v2/files/1584838195/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 502,
+        "reason": "HTTPError 502",
+        "method": "HEAD"
+      }
+    },
+    {
+      "name": "Dandadan S01 E21",
+      "url": "https://api.put.io/v2/files/1584822146/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 502,
+        "reason": "HTTPError 502",
+        "method": "HEAD"
+      }
+    },
+    {
+      "name": "Dragon Ball Daima S01 E07",
+      "url": "https://api.put.io/v2/files/1584831644/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 502,
+        "reason": "HTTPError 502",
+        "method": "HEAD"
+      }
+    },
     {
       "name": "Himouto! Umaru-chan S01 E01",
       "url": "https://cdn.animeiat.tv/files/28323/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP01%5B720p%5D.mp4",
@@ -257,6 +317,76 @@
         "status": null,
         "reason": "<urlopen error [Errno -5] No address associated with hostname>",
         "method": "GET"
+      }
+    },
+    {
+      "name": "Kimetsu no Yaiba - Hashira Geiko-hen S01 E01",
+      "url": "https://api.put.io/v2/files/1584822460/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 503,
+        "reason": "HTTPError 503",
+        "method": "HEAD"
+      }
+    },
+    {
+      "name": "Niwatori Fighter S01 E07",
+      "url": "https://api.put.io/v2/files/1584107439/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 502,
+        "reason": "HTTPError 502",
+        "method": "HEAD"
+      }
+    },
+    {
+      "name": "One-Punch Man S3 S01 E08",
+      "url": "https://api.put.io/v2/files/1584880359/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 502,
+        "reason": "HTTPError 502",
+        "method": "HEAD"
+      }
+    },
+    {
+      "name": "Ponkotsu Fuuki Iin to Skirt-take ga Futekisetsu na JK no Hanashi S01 E04",
+      "url": "https://api.put.io/v2/files/1584084930/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 502,
+        "reason": "HTTPError 502",
+        "method": "HEAD"
+      }
+    },
+    {
+      "name": "Rurouni Kenshin S01 E43",
+      "url": "https://api.put.io/v2/files/1584833006/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 502,
+        "reason": "HTTPError 502",
+        "method": "HEAD"
+      }
+    },
+    {
+      "name": "Spy x Family S01 E50",
+      "url": "https://api.put.io/v2/files/1584821610/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 502,
+        "reason": "HTTPError 502",
+        "method": "HEAD"
+      }
+    },
+    {
+      "name": "Wind Breaker S01 E23",
+      "url": "https://api.put.io/v2/files/1584824477/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+      "validation": {
+        "ok": false,
+        "status": 503,
+        "reason": "HTTPError 503",
+        "method": "HEAD"
       }
     }
   ]
