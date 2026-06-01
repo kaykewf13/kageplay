@@ -1,5 +1,5 @@
 {
-  "versao": "2.2",
+  "versao": "2.3",
   "atualizado_em": "2026-05-31",
   "animes": [
     {
@@ -11,7 +11,7 @@
         "Action & Adventure",
         "Animacao",
         "AnimesOnlineClub",
-        "Sala Externa"
+        "Player Limpo"
       ],
       "adulto_18": false,
       "status": "Validado",
@@ -22,149 +22,17 @@
       "fonte_principal": "AnimesOnlineClub",
       "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-1/",
       "episodios": [
-        {
-          "episodio_num": 1,
-          "titulo_episodio": "Episodio 1",
-          "url_video": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-1/",
-          "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-1/",
-          "tipo_player": "iframe_tentativa",
-          "modo_reproducao": "sala_externa",
-          "gratuito_autorizado": "Sim",
-          "drm_paywall": "Nao",
-          "publicar": "Sim",
-          "status_link": "Ativo",
-          "adulto_18": false
-        },
-        {
-          "episodio_num": 2,
-          "titulo_episodio": "Episodio 2",
-          "url_video": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-2/",
-          "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-2/",
-          "tipo_player": "iframe_tentativa",
-          "modo_reproducao": "sala_externa",
-          "gratuito_autorizado": "Sim",
-          "drm_paywall": "Nao",
-          "publicar": "Sim",
-          "status_link": "Ativo",
-          "adulto_18": false
-        },
-        {
-          "episodio_num": 3,
-          "titulo_episodio": "Episodio 3",
-          "url_video": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-3/",
-          "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-3/",
-          "tipo_player": "iframe_tentativa",
-          "modo_reproducao": "sala_externa",
-          "gratuito_autorizado": "Sim",
-          "drm_paywall": "Nao",
-          "publicar": "Sim",
-          "status_link": "Ativo",
-          "adulto_18": false
-        },
-        {
-          "episodio_num": 4,
-          "titulo_episodio": "Episodio 4",
-          "url_video": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-4/",
-          "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-4/",
-          "tipo_player": "iframe_tentativa",
-          "modo_reproducao": "sala_externa",
-          "gratuito_autorizado": "Sim",
-          "drm_paywall": "Nao",
-          "publicar": "Sim",
-          "status_link": "Ativo",
-          "adulto_18": false
-        },
-        {
-          "episodio_num": 5,
-          "titulo_episodio": "Episodio 5",
-          "url_video": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-5/",
-          "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-5/",
-          "tipo_player": "iframe_tentativa",
-          "modo_reproducao": "sala_externa",
-          "gratuito_autorizado": "Sim",
-          "drm_paywall": "Nao",
-          "publicar": "Sim",
-          "status_link": "Ativo",
-          "adulto_18": false
-        },
-        {
-          "episodio_num": 6,
-          "titulo_episodio": "Episodio 6",
-          "url_video": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-6/",
-          "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-6/",
-          "tipo_player": "iframe_tentativa",
-          "modo_reproducao": "sala_externa",
-          "gratuito_autorizado": "Sim",
-          "drm_paywall": "Nao",
-          "publicar": "Sim",
-          "status_link": "Ativo",
-          "adulto_18": false
-        },
-        {
-          "episodio_num": 7,
-          "titulo_episodio": "Episodio 7",
-          "url_video": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-7/",
-          "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-7/",
-          "tipo_player": "iframe_tentativa",
-          "modo_reproducao": "sala_externa",
-          "gratuito_autorizado": "Sim",
-          "drm_paywall": "Nao",
-          "publicar": "Sim",
-          "status_link": "Ativo",
-          "adulto_18": false
-        },
-        {
-          "episodio_num": 8,
-          "titulo_episodio": "Episodio 8",
-          "url_video": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-8/",
-          "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-8/",
-          "tipo_player": "iframe_tentativa",
-          "modo_reproducao": "sala_externa",
-          "gratuito_autorizado": "Sim",
-          "drm_paywall": "Nao",
-          "publicar": "Sim",
-          "status_link": "Ativo",
-          "adulto_18": false
-        },
-        {
-          "episodio_num": 9,
-          "titulo_episodio": "Episodio 9",
-          "url_video": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-9/",
-          "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-9/",
-          "tipo_player": "iframe_tentativa",
-          "modo_reproducao": "sala_externa",
-          "gratuito_autorizado": "Sim",
-          "drm_paywall": "Nao",
-          "publicar": "Sim",
-          "status_link": "Ativo",
-          "adulto_18": false
-        },
-        {
-          "episodio_num": 10,
-          "titulo_episodio": "Episodio 10",
-          "url_video": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-10/",
-          "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-10/",
-          "tipo_player": "iframe_tentativa",
-          "modo_reproducao": "sala_externa",
-          "gratuito_autorizado": "Sim",
-          "drm_paywall": "Nao",
-          "publicar": "Sim",
-          "status_link": "Ativo",
-          "adulto_18": false
-        },
-        {
-          "episodio_num": 11,
-          "titulo_episodio": "Episodio 11",
-          "url_video": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-11/",
-          "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-11/",
-          "tipo_player": "iframe_tentativa",
-          "modo_reproducao": "sala_externa",
-          "gratuito_autorizado": "Sim",
-          "drm_paywall": "Nao",
-          "publicar": "Sim",
-          "status_link": "Ativo",
-          "adulto_18": false
-        }
+        {"episodio_num":1,"titulo_episodio":"Episodio 1","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-1/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-1/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-1/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
+        {"episodio_num":2,"titulo_episodio":"Episodio 2","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-2/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-2/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-2/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
+        {"episodio_num":3,"titulo_episodio":"Episodio 3","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-3/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-3/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-3/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
+        {"episodio_num":4,"titulo_episodio":"Episodio 4","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-4/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-4/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-4/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
+        {"episodio_num":5,"titulo_episodio":"Episodio 5","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-5/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-5/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-5/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
+        {"episodio_num":6,"titulo_episodio":"Episodio 6","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-6/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-6/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-6/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
+        {"episodio_num":7,"titulo_episodio":"Episodio 7","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-7/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-7/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-7/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
+        {"episodio_num":8,"titulo_episodio":"Episodio 8","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-8/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-8/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-8/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
+        {"episodio_num":9,"titulo_episodio":"Episodio 9","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-9/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-9/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-9/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
+        {"episodio_num":10,"titulo_episodio":"Episodio 10","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-10/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-10/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-10/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
+        {"episodio_num":11,"titulo_episodio":"Episodio 11","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-11/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-11/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-11/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false}
       ]
     }
   ]
