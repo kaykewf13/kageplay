@@ -3,33 +3,35 @@
 """
 KagePlay - build_catalog_from_sugoiapi.py
 
-Converte a estrutura M3U gerada pelo repositório kaykewf13/SUGOIAPI
-para o formato data/catalog.json usado pelo KagePlay.
+Converte o output M3U do kaykewf13/SUGOIAPI para o formato data/catalog.json do KagePlay.
 
-Fonte padrão:
-  https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u
+Melhorias desta versão:
+- Separa temporadas corretamente quando o título traz S2, S3, 2nd Season, 3rd Season etc.
+- Valida URLs antes de publicar quando VALIDATE_LINKS=1.
+- Gera data/catalog-health.json com resumo de links válidos, inválidos e ignorados.
+- Aceita URLs tokenizadas apenas quando ALLOW_TOKENIZED_URLS=1.
 
-Uso seguro recomendado:
+Uso:
   python scripts/build_catalog_from_sugoiapi.py --out data/catalog.json
 
-Por segurança, URLs tokenizadas/privadas como oauth_token e api.put.io são
-ignoradas por padrão. Para ambiente pessoal/controlado, habilite explicitamente:
-  ALLOW_TOKENIZED_URLS=1 python scripts/build_catalog_from_sugoiapi.py --out data/catalog.json
-
-Se existir uma playlist proxy pública, prefira usá-la:
-  python scripts/build_catalog_from_sugoiapi.py --m3u-url URL_DA_PLAYLIST_PROXY --out data/catalog.json
+Uso completo, ambiente pessoal/controlado:
+  ALLOW_TOKENIZED_URLS=1 INCLUDE_MOVIES=1 VALIDATE_LINKS=1 \
+  python scripts/build_catalog_from_sugoiapi.py --out data/catalog.json
 """
 
 import argparse
 import datetime as dt
-import hashlib
 import json
 import os
 import re
 import sys
+import time
+import urllib.error
 import urllib.request
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from urllib.parse import urlparse
 
 DEFAULT_M3U_URL = "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u"
 PLACEHOLDER_COVER = "https://placehold.co/480x720/16161f/9a9aae?text={title}"
@@ -39,6 +41,13 @@ EXTINF_RE = re.compile(r"#EXTINF:[^,]*,(.+)$")
 ATTR_RE = re.compile(r'(\w[\w-]*)="([^"]*)"')
 SERIES_RE = re.compile(r"^(?P<title>.+?)\s+S(?P<season>\d{1,2})\s*E(?P<episode>\d{1,4})$", re.I)
 SERIES_RE_COMPACT = re.compile(r"^(?P<title>.+?)\s+S(?P<season>\d{1,2})E(?P<episode>\d{1,4})$", re.I)
+
+SEASON_HINT_PATTERNS = [
+    re.compile(r"\bS(?P<season>\d{1,2})\b\s*$", re.I),
+    re.compile(r"\bSeason\s*(?P<season>\d{1,2})\b\s*$", re.I),
+    re.compile(r"\b(?P<season>\d{1,2})(?:st|nd|rd|th)\s+Season\b\s*$", re.I),
+    re.compile(r"\b(?P<season>\d{1,2})a\s+Temporada\b\s*$", re.I),
+]
 
 CATEGORY_MAP = {
     "Acao e Aventura": "Acao",
@@ -51,6 +60,8 @@ CATEGORY_MAP = {
     "Clasicos": "Classicos",
     "Geral": "Geral",
 }
+
+MEDIA_EXTENSIONS = (".mp4", ".mkv", ".webm", ".m3u8", ".ts")
 
 
 def norm(v: str) -> str:
@@ -84,7 +95,7 @@ def safe_title_for_placeholder(title: str) -> str:
 
 def fetch_text(path_or_url: str) -> str:
     if path_or_url.startswith(("http://", "https://")):
-        req = urllib.request.Request(path_or_url, headers={"User-Agent": "KagePlay-SUGOIAPI-Importer/1.0"})
+        req = urllib.request.Request(path_or_url, headers={"User-Agent": "KagePlay-SUGOIAPI-Importer/1.1"})
         with urllib.request.urlopen(req, timeout=30) as resp:
             return resp.read().decode("utf-8", errors="ignore")
     return Path(path_or_url).read_text(encoding="utf-8", errors="ignore")
@@ -97,11 +108,36 @@ def parse_attrs(line: str) -> dict:
 def detect_kind(group_title: str, tvg_type: str, tvg_name: str) -> str:
     g = group_title.lower()
     t = tvg_type.lower()
-    if "series" in g or t == "series":
+    name = tvg_name.lower()
+    if "series" in g or t == "series" or SERIES_RE.search(tvg_name) or SERIES_RE_COMPACT.search(tvg_name):
         return "series"
     if "filmes" in g or "movies" in g or t == "movie":
         return "movie"
+    if any(ext in name for ext in MEDIA_EXTENSIONS):
+        return "movie"
     return "live"
+
+
+def normalize_title_and_season(title_part: str, parsed_season: int):
+    title = norm(title_part)
+    season = parsed_season
+
+    # Ex: "Arifureta ... S3 S01 E05" -> título base + temporada 3
+    # Ex: "Himouto! Umaru-chan 2nd Season S01 E01" -> título base + temporada 2
+    for pat in SEASON_HINT_PATTERNS:
+        m = pat.search(title)
+        if m:
+            try:
+                season = int(m.group("season"))
+                title = pat.sub("", title).strip(" -_.")
+                break
+            except Exception:
+                pass
+
+    # Limpezas comuns que não devem fazer parte do nome base.
+    title = re.sub(r"\s+-\s*$", "", title).strip(" -_.")
+    title = re.sub(r"\s+\bS\d{1,2}\b$", "", title, flags=re.I).strip(" -_.")
+    return title, season
 
 
 def parse_series_name(tvg_name: str, fallback: str):
@@ -109,9 +145,12 @@ def parse_series_name(tvg_name: str, fallback: str):
     m = SERIES_RE.match(candidate) or SERIES_RE_COMPACT.match(candidate)
     if not m:
         return None
-    title = norm(m.group("title"))
-    season = int(m.group("season"))
+    raw_title = norm(m.group("title"))
+    parsed_season = int(m.group("season"))
     episode = int(m.group("episode"))
+    title, season = normalize_title_and_season(raw_title, parsed_season)
+    if not title or len(title) < 2:
+        return None
     return title, season, episode
 
 
@@ -121,14 +160,53 @@ def infer_player_type(url: str) -> str:
         return "hls"
     if ".webm" in u:
         return "webm"
-    # Put.io / stream direto normalmente entrega vídeo por Content-Type.
-    # O player nativo do navegador tentará executar como vídeo.
     return "mp4"
+
+
+def is_probably_media_url(url: str) -> bool:
+    u = url.lower()
+    return any(ext in u for ext in MEDIA_EXTENSIONS) or "/stream" in u or "api.put.io" in u
+
+
+def validate_url(url: str, timeout: int = 12) -> dict:
+    """Validação pragmática: HEAD primeiro, depois GET com Range. Não baixa o vídeo completo."""
+    if not url.startswith(("http://", "https://")):
+        return {"ok": False, "status": None, "reason": "URL sem http/https"}
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (KagePlay link validator)",
+        "Accept": "*/*",
+    }
+
+    # Alguns CDNs não gostam de HEAD. Ainda assim, tentamos por velocidade.
+    for method in ("HEAD", "GET"):
+        try:
+            req_headers = dict(headers)
+            if method == "GET":
+                req_headers["Range"] = "bytes=0-2047"
+            req = urllib.request.Request(url, method=method, headers=req_headers)
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                status = getattr(resp, "status", 200)
+                ctype = resp.headers.get("Content-Type", "")
+                if 200 <= status < 400:
+                    return {"ok": True, "status": status, "content_type": ctype, "method": method}
+                return {"ok": False, "status": status, "reason": f"HTTP {status}", "method": method}
+        except urllib.error.HTTPError as e:
+            # 405/403 em HEAD não encerra: tenta GET.
+            if method == "HEAD" and e.code in (403, 405, 406):
+                continue
+            return {"ok": False, "status": e.code, "reason": f"HTTPError {e.code}", "method": method}
+        except Exception as e:
+            if method == "HEAD":
+                continue
+            return {"ok": False, "status": None, "reason": str(e)[:180], "method": method}
+
+    return {"ok": False, "status": None, "reason": "Falha desconhecida"}
 
 
 def parse_m3u(content: str, allow_tokenized: bool):
     items = []
-    skipped_private = 0
+    counters = {"private_skipped": 0, "non_media_skipped": 0, "live_skipped": 0}
     lines = content.splitlines()
     i = 0
     while i < len(lines):
@@ -151,7 +229,7 @@ def parse_m3u(content: str, allow_tokenized: bool):
             continue
 
         if is_tokenized_or_private(url) and not allow_tokenized:
-            skipped_private += 1
+            counters["private_skipped"] += 1
             i = j + 1
             continue
 
@@ -163,6 +241,17 @@ def parse_m3u(content: str, allow_tokenized: bool):
         group_title = norm(attrs.get("group-title")) or "Geral"
         tvg_type = norm(attrs.get("tvg-type"))
         kind = detect_kind(group_title, tvg_type, tvg_name)
+
+        if kind == "live":
+            counters["live_skipped"] += 1
+            i = j + 1
+            continue
+
+        if not is_probably_media_url(url):
+            counters["non_media_skipped"] += 1
+            i = j + 1
+            continue
+
         parts = [p.strip() for p in group_title.split("|")]
         category = CATEGORY_MAP.get(parts[1], parts[1]) if len(parts) > 1 else "Geral"
 
@@ -177,49 +266,83 @@ def parse_m3u(content: str, allow_tokenized: bool):
         })
         i = j + 1
 
-    return items, skipped_private
+    return items, counters
 
 
-def build_catalog(items, include_movies: bool):
+def validate_items(items, max_workers: int):
+    results = {}
+    unique_urls = sorted({i["url"] for i in items})
+    if not unique_urls:
+        return results
+
+    print(f"Validando {len(unique_urls)} URLs de mídia...")
+    started = time.time()
+    with ThreadPoolExecutor(max_workers=max_workers) as ex:
+        futs = {ex.submit(validate_url, url): url for url in unique_urls}
+        for n, fut in enumerate(as_completed(futs), 1):
+            url = futs[fut]
+            try:
+                results[url] = fut.result()
+            except Exception as e:
+                results[url] = {"ok": False, "status": None, "reason": str(e)[:180]}
+            if n % 50 == 0:
+                print(f"  {n}/{len(unique_urls)} URLs verificadas...")
+    elapsed = round(time.time() - started, 1)
+    ok_count = sum(1 for r in results.values() if r.get("ok"))
+    print(f"Validação finalizada: {ok_count}/{len(unique_urls)} válidas em {elapsed}s")
+    return results
+
+
+def build_catalog(items, include_movies: bool, validation: dict, validate_links: bool):
     series = defaultdict(lambda: {
         "title": "",
         "category": "Geral",
         "logo": "",
         "episodes": {},
         "failovers": defaultdict(list),
+        "invalid": [],
     })
-
     movies = []
+    invalid_items = []
 
     for item in items:
+        val = validation.get(item["url"], {"ok": True})
+        if validate_links and not val.get("ok"):
+            invalid_items.append({"name": item["name"], "url": item["url"], "validation": val})
+            continue
+
         if item["kind"] == "series":
             parsed = parse_series_name(item["name"], item["display_name"])
             if not parsed:
+                invalid_items.append({"name": item["name"], "url": item["url"], "validation": {"ok": False, "reason": "Não foi possível detectar série/episódio"}})
                 continue
             title, season, episode = parsed
             key = slugify(title)
             data = series[key]
             data["title"] = title
             data["category"] = item["category"] or "Geral"
-            data["logo"] = item["logo"]
+            data["logo"] = item["logo"] or data["logo"]
             ep_key = (season, episode)
 
             if ep_key not in data["episodes"]:
                 data["episodes"][ep_key] = {
                     "season": season,
                     "episode": episode,
-                    "title": item["display_name"] or f"Episodio {episode}",
+                    "title": item["display_name"] or f"T{season:02d} E{episode:02d}",
                     "url": item["url"],
                     "logo": item["logo"],
+                    "validation": val,
                 }
             else:
                 data["failovers"][ep_key].append(item["url"])
 
         elif include_movies and item["kind"] == "movie":
-            movies.append(item)
+            movies.append({**item, "validation": val})
 
     animes = []
     for key, data in sorted(series.items(), key=lambda x: x[1]["title"].lower()):
+        if not data["episodes"]:
+            continue
         title = data["title"]
         ph = safe_title_for_placeholder(title)
         episodes = []
@@ -239,10 +362,13 @@ def build_catalog(items, include_movies: bool):
                 "gratuito_autorizado": "Sim",
                 "drm_paywall": "Nao",
                 "publicar": "Sim",
-                "status_link": "Ativo",
+                "status_link": "Ativo" if not validate_links or info.get("validation", {}).get("ok") else "Falha validacao",
                 "adulto_18": False,
             }
             failovers = data["failovers"].get((season, ep), [])
+            # Mantém failovers somente se válidos quando validação está ativa.
+            if validate_links:
+                failovers = [u for u in failovers if validation.get(u, {}).get("ok")]
             if failovers:
                 ep_obj["failover_urls"] = failovers
             episodes.append(ep_obj)
@@ -256,7 +382,7 @@ def build_catalog(items, include_movies: bool):
             "adulto_18": False,
             "status": "SUGOIAPI",
             "publicar": "Sim",
-            "descricao": f"Catalogo importado automaticamente do SUGOIAPI. Fonte: playlist_validada.m3u.",
+            "descricao": "Catálogo importado automaticamente do SUGOIAPI, com links de mídia validados pelo pipeline do KagePlay.",
             "capa_url": data["logo"] or PLACEHOLDER_COVER.format(title=ph),
             "banner_url": PLACEHOLDER_BANNER.format(title=ph),
             "fonte_principal": "SUGOIAPI",
@@ -279,12 +405,13 @@ def build_catalog(items, include_movies: bool):
                 "adulto_18": False,
                 "status": "SUGOIAPI",
                 "publicar": "Sim",
-                "descricao": "Filme/VOD importado automaticamente do SUGOIAPI.",
+                "descricao": "Filme/VOD importado automaticamente do SUGOIAPI, com link validado pelo pipeline do KagePlay.",
                 "capa_url": item["logo"] or PLACEHOLDER_COVER.format(title=ph),
                 "banner_url": PLACEHOLDER_BANNER.format(title=ph),
                 "fonte_principal": "SUGOIAPI",
                 "fonte_url": DEFAULT_M3U_URL,
                 "episodios": [{
+                    "temporada": 1,
                     "episodio_num": 1,
                     "titulo_episodio": "Filme",
                     "url_video": url,
@@ -303,41 +430,72 @@ def build_catalog(items, include_movies: bool):
             })
 
     return {
-        "versao": "sugoiapi-1.0",
+        "versao": "sugoiapi-1.1",
         "atualizado_em": str(dt.date.today()),
         "fonte_catalogo": "SUGOIAPI",
         "origem": DEFAULT_M3U_URL,
         "animes": animes,
-    }
+    }, invalid_items
 
 
 def main():
     ap = argparse.ArgumentParser(description="Gera catalog.json do KagePlay a partir do SUGOIAPI.")
     ap.add_argument("--m3u-url", default=os.getenv("SUGOIAPI_M3U_URL", DEFAULT_M3U_URL))
     ap.add_argument("--out", default="data/catalog.json")
+    ap.add_argument("--health-out", default="data/catalog-health.json")
     ap.add_argument("--include-movies", action="store_true", default=os.getenv("INCLUDE_MOVIES", "0") == "1")
     ap.add_argument("--allow-tokenized", action="store_true", default=os.getenv("ALLOW_TOKENIZED_URLS", "0") == "1")
+    ap.add_argument("--validate-links", action="store_true", default=os.getenv("VALIDATE_LINKS", "1") == "1")
+    ap.add_argument("--validation-workers", type=int, default=int(os.getenv("VALIDATION_WORKERS", "24")))
     args = ap.parse_args()
 
     content = fetch_text(args.m3u_url)
-    items, skipped_private = parse_m3u(content, allow_tokenized=args.allow_tokenized)
-    catalog = build_catalog(items, include_movies=args.include_movies)
+    items, counters = parse_m3u(content, allow_tokenized=args.allow_tokenized)
+
+    validation = validate_items(items, args.validation_workers) if args.validate_links else {}
+    catalog, invalid_items = build_catalog(items, args.include_movies, validation, args.validate_links)
 
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(catalog, ensure_ascii=False, indent=2), encoding="utf-8")
 
+    health = {
+        "versao": "1.1",
+        "atualizado_em": str(dt.datetime.utcnow()) + "Z",
+        "m3u_url": args.m3u_url,
+        "allow_tokenized_urls": bool(args.allow_tokenized),
+        "include_movies": bool(args.include_movies),
+        "validate_links": bool(args.validate_links),
+        "itens_lidos": len(items),
+        "titulos_publicados": len(catalog["animes"]),
+        "episodios_publicados": sum(len(a.get("episodios", [])) for a in catalog["animes"]),
+        "contadores": counters,
+        "validacao": {
+            "urls_verificadas": len(validation),
+            "urls_validas": sum(1 for v in validation.values() if v.get("ok")),
+            "urls_invalidas": sum(1 for v in validation.values() if not v.get("ok")),
+        },
+        "invalidos_amostra": invalid_items[:50],
+    }
+    health_out = Path(args.health_out)
+    health_out.parent.mkdir(parents=True, exist_ok=True)
+    health_out.write_text(json.dumps(health, ensure_ascii=False, indent=2), encoding="utf-8")
+
     print("=" * 60)
     print("KagePlay ← SUGOIAPI catalog build OK")
-    print(f"Fonte M3U          : {args.m3u_url}")
-    print(f"Itens lidos        : {len(items)}")
-    print(f"Privados ignorados : {skipped_private}")
-    print(f"Titulos publicados : {len(catalog['animes'])}")
-    print(f"Saida              : {out}")
+    print(f"Fonte M3U              : {args.m3u_url}")
+    print(f"Itens candidatos        : {len(items)}")
+    print(f"Titulos publicados      : {len(catalog['animes'])}")
+    print(f"Episodios publicados    : {health['episodios_publicados']}")
+    print(f"Privados ignorados      : {counters['private_skipped']}")
+    print(f"Live ignorados          : {counters['live_skipped']}")
+    print(f"Links inválidos         : {health['validacao']['urls_invalidas']}")
+    print(f"Saida catalog           : {out}")
+    print(f"Saida health            : {health_out}")
     print("=" * 60)
 
-    if skipped_private and not args.allow_tokenized:
-        print("AVISO: URLs com token/api.put.io foram ignoradas. Use ALLOW_TOKENIZED_URLS=1 apenas em ambiente pessoal/controlado.")
+    if counters["private_skipped"] and not args.allow_tokenized:
+        print("AVISO: URLs com token/api.put.io foram ignoradas. Execute com ALLOW_TOKENIZED_URLS=1 para catálogo completo em ambiente pessoal/controlado.")
 
 
 if __name__ == "__main__":
