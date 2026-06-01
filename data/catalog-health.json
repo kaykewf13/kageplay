@@ -1,0 +1,263 @@
+{
+  "versao": "1.1",
+  "atualizado_em": "2026-06-01 02:06:17.792622Z",
+  "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
+  "allow_tokenized_urls": true,
+  "include_movies": true,
+  "validate_links": true,
+  "itens_lidos": 807,
+  "titulos_publicados": 125,
+  "episodios_publicados": 672,
+  "contadores": {
+    "private_skipped": 0,
+    "non_media_skipped": 0,
+    "live_skipped": 6
+  },
+  "validacao": {
+    "urls_verificadas": 807,
+    "urls_validas": 783,
+    "urls_invalidas": 24
+  },
+  "invalidos_amostra": [
+    {
+      "name": "Himouto! Umaru-chan S01 E01",
+      "url": "https://cdn.animeiat.tv/files/28323/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP01%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E01",
+      "url": "https://cdn.animeiat.tv/files/28336/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP01%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E02",
+      "url": "https://cdn.animeiat.tv/files/28316/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP02%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E02",
+      "url": "https://cdn.animeiat.tv/files/28329/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP02%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E03",
+      "url": "https://cdn.animeiat.tv/files/28317/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP03%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E03",
+      "url": "https://cdn.animeiat.tv/files/28335/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP03%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E04",
+      "url": "https://cdn.animeiat.tv/files/28324/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP04%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E04",
+      "url": "https://cdn.animeiat.tv/files/28330/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP04%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E05",
+      "url": "https://cdn.animeiat.tv/files/28315/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP05%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E05",
+      "url": "https://cdn.animeiat.tv/files/28327/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP05%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E06",
+      "url": "https://cdn.animeiat.tv/files/28313/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP06%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E06",
+      "url": "https://cdn.animeiat.tv/files/28333/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP06%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E07",
+      "url": "https://cdn.animeiat.tv/files/28320/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP07%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E07",
+      "url": "https://cdn.animeiat.tv/files/28332/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP07%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E08",
+      "url": "https://cdn.animeiat.tv/files/28318/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP08%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E08",
+      "url": "https://cdn.animeiat.tv/files/28328/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP08%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E09",
+      "url": "https://cdn.animeiat.tv/files/28322/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP09%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E09",
+      "url": "https://cdn.animeiat.tv/files/28325/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP09%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E10",
+      "url": "https://cdn.animeiat.tv/files/28319/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP10%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E10",
+      "url": "https://cdn.animeiat.tv/files/28331/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP10%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E11",
+      "url": "https://cdn.animeiat.tv/files/28321/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP11%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E11",
+      "url": "https://cdn.animeiat.tv/files/28326/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP11%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E12",
+      "url": "https://cdn.animeiat.tv/files/28314/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP12%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E12",
+      "url": "https://cdn.animeiat.tv/files/28334/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP12%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error [Errno -5] No address associated with hostname>",
+        "method": "GET"
+      }
+    }
+  ]
+}
