@@ -6,19 +6,27 @@ on:
       allow_tokenized_urls:
         description: "Permitir URLs tokenizadas/privadas, ex: api.put.io/oauth_token. Use apenas em ambiente pessoal/controlado."
         required: false
-        default: "false"
+        default: "true"
         type: choice
         options:
-          - "false"
           - "true"
+          - "false"
       include_movies:
         description: "Incluir filmes/VOD além de séries."
         required: false
-        default: "false"
+        default: "true"
         type: choice
         options:
-          - "false"
           - "true"
+          - "false"
+      validate_links:
+        description: "Validar URLs dos players antes de publicar."
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
   schedule:
     - cron: "30 3 * * *"
 
@@ -40,13 +48,15 @@ jobs:
       - name: Build catalog from SUGOIAPI
         env:
           SUGOIAPI_M3U_URL: ${{ vars.SUGOIAPI_M3U_URL || 'https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u' }}
-          ALLOW_TOKENIZED_URLS: ${{ github.event.inputs.allow_tokenized_urls == 'true' && '1' || '0' }}
-          INCLUDE_MOVIES: ${{ github.event.inputs.include_movies == 'true' && '1' || '0' }}
+          ALLOW_TOKENIZED_URLS: ${{ github.event.inputs.allow_tokenized_urls != 'false' && '1' || '0' }}
+          INCLUDE_MOVIES: ${{ github.event.inputs.include_movies != 'false' && '1' || '0' }}
+          VALIDATE_LINKS: ${{ github.event.inputs.validate_links != 'false' && '1' || '0' }}
+          VALIDATION_WORKERS: "32"
         run: |
-          python scripts/build_catalog_from_sugoiapi.py --out data/catalog.json
+          python scripts/build_catalog_from_sugoiapi.py --out data/catalog.json --health-out data/catalog-health.json
 
       - name: Commit catalog update
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "data: sync KagePlay catalog from SUGOIAPI"
-          file_pattern: data/catalog.json
+          commit_message: "data: sync validated KagePlay catalog from SUGOIAPI"
+          file_pattern: data/catalog.json data/catalog-health.json
