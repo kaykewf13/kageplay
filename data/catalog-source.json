@@ -1,0 +1,23 @@
+{
+  "versao": "1.0",
+  "atualizado_em": "2026-05-31",
+  "fonte_principal": "SUGOIAPI",
+  "modo_integracao": "m3u_to_catalog",
+  "catalogo_saida": "data/catalog.json",
+  "playlist_padrao": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
+  "playlist_proxy_recomendada": "output/playlist_proxy.m3u quando o m3u-proxy estiver publicado",
+  "script_importador": "scripts/build_catalog_from_sugoiapi.py",
+  "workflow": ".github/workflows/sync-sugoiapi-catalog.yml",
+  "player_kageplay": {
+    "mp4_webm": "video nativo HTML5",
+    "hls_m3u8": "video nativo Safari ou hls.js",
+    "iframe_tentativa": "sala externa",
+    "player_only": "recorte visual para fonte externa"
+  },
+  "seguranca": {
+    "ignorar_urls_tokenizadas_por_padrao": true,
+    "motivo": "Evita publicar tokens, oauth_token, api.put.io ou links privados no GitHub Pages público.",
+    "liberar_em_ambiente_controlado": "Executar workflow manual com allow_tokenized_urls=true, apenas se o site for pessoal/controlado."
+  },
+  "status": "Integracao preparada. Rodar workflow Sync SUGOIAPI catalog para regenerar o catalogo completo."
+}
