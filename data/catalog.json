@@ -1,38 +1,269 @@
 {
-  "versao": "2.3",
-  "atualizado_em": "2026-05-31",
+  "versao": "sugoiapi-1.0",
+  "atualizado_em": "2026-06-01",
+  "fonte_catalogo": "SUGOIAPI",
+  "origem": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "animes": [
     {
-      "anime_id": "sakamoto-days",
-      "titulo": "Sakamoto Days",
-      "slug": "sakamoto-days",
-      "categoria_principal": "Comedia",
+      "anime_id": "himouto-umaru-chan",
+      "titulo": "Himouto! Umaru-chan",
+      "slug": "himouto-umaru-chan",
+      "categoria_principal": "Slice of Life",
       "categorias_secundarias": [
-        "Action & Adventure",
-        "Animacao",
-        "AnimesOnlineClub",
-        "Player Limpo"
+        "SUGOIAPI",
+        "IPTV",
+        "VOD",
+        "Player Nativo"
       ],
       "adulto_18": false,
-      "status": "Validado",
+      "status": "SUGOIAPI",
       "publicar": "Sim",
-      "descricao": "Taro Sakamoto ja foi o maior assassino de aluguel de todos os tempos, mas largou tudo por amor. Agora, com o passado a espreita, ele vai ter que lutar como nunca.",
-      "capa_url": "https://placehold.co/480x720/16161f/9a9aae?text=Sakamoto+Days",
-      "banner_url": "https://placehold.co/1280x420/0c0c14/e6c369?text=Sakamoto+Days",
-      "fonte_principal": "AnimesOnlineClub",
-      "fonte_url": "https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-1/",
+      "descricao": "Catalogo importado automaticamente do SUGOIAPI. Fonte: playlist_validada.m3u.",
+      "capa_url": "https://api.animeiat.co/storage/thumbnails/28334/OjoP0eSEQgPTEdOh30.jpg",
+      "banner_url": "https://placehold.co/1280x420/0c0c14/e6c369?text=Himouto+Umaru+chan",
+      "fonte_principal": "SUGOIAPI",
+      "fonte_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
       "episodios": [
-        {"episodio_num":1,"titulo_episodio":"Episodio 1","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-1/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-1/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-1/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
-        {"episodio_num":2,"titulo_episodio":"Episodio 2","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-2/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-2/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-2/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
-        {"episodio_num":3,"titulo_episodio":"Episodio 3","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-3/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-3/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-3/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
-        {"episodio_num":4,"titulo_episodio":"Episodio 4","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-4/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-4/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-4/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
-        {"episodio_num":5,"titulo_episodio":"Episodio 5","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-5/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-5/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-5/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
-        {"episodio_num":6,"titulo_episodio":"Episodio 6","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-6/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-6/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-6/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
-        {"episodio_num":7,"titulo_episodio":"Episodio 7","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-7/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-7/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-7/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
-        {"episodio_num":8,"titulo_episodio":"Episodio 8","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-8/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-8/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-8/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
-        {"episodio_num":9,"titulo_episodio":"Episodio 9","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-9/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-9/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-9/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
-        {"episodio_num":10,"titulo_episodio":"Episodio 10","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-10/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-10/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-10/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false},
-        {"episodio_num":11,"titulo_episodio":"Episodio 11","url_video":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-11/","player_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-11/","fonte_url":"https://animesonlineclub.net/assistir-sakamoto-days-temporada-1-episodio-11/","tipo_player":"iframe_tentativa","modo_reproducao":"player_only","modo_visual":"player_only","gratuito_autorizado":"Sim","drm_paywall":"Nao","publicar":"Sim","status_link":"Ativo","adulto_18":false}
+        {
+          "temporada": 1,
+          "episodio_num": 1,
+          "titulo_episodio": "T01 E01",
+          "url_video": "https://cdn.animeiat.tv/files/28323/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP01%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28323/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP01%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28323/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP01%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28336/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP01%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 2,
+          "titulo_episodio": "T01 E02",
+          "url_video": "https://cdn.animeiat.tv/files/28316/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP02%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28316/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP02%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28316/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP02%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28329/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP02%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 3,
+          "titulo_episodio": "T01 E03",
+          "url_video": "https://cdn.animeiat.tv/files/28317/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP03%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28317/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP03%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28317/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP03%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28335/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP03%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 4,
+          "titulo_episodio": "T01 E04",
+          "url_video": "https://cdn.animeiat.tv/files/28324/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP04%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28324/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP04%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28324/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP04%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28330/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP04%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 5,
+          "titulo_episodio": "T01 E05",
+          "url_video": "https://cdn.animeiat.tv/files/28315/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP05%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28315/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP05%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28315/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP05%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28327/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP05%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 6,
+          "titulo_episodio": "T01 E06",
+          "url_video": "https://cdn.animeiat.tv/files/28313/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP06%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28313/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP06%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28313/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP06%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28333/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP06%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 7,
+          "titulo_episodio": "T01 E07",
+          "url_video": "https://cdn.animeiat.tv/files/28320/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP07%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28320/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP07%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28320/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP07%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28332/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP07%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 8,
+          "titulo_episodio": "T01 E08",
+          "url_video": "https://cdn.animeiat.tv/files/28318/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP08%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28318/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP08%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28318/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP08%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28328/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP08%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 9,
+          "titulo_episodio": "T01 E09",
+          "url_video": "https://cdn.animeiat.tv/files/28322/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP09%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28322/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP09%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28322/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP09%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28325/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP09%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 10,
+          "titulo_episodio": "T01 E10",
+          "url_video": "https://cdn.animeiat.tv/files/28319/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP10%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28319/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP10%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28319/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP10%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28331/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP10%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 11,
+          "titulo_episodio": "T01 E11",
+          "url_video": "https://cdn.animeiat.tv/files/28321/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP11%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28321/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP11%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28321/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP11%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28326/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP11%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 12,
+          "titulo_episodio": "T01 E12",
+          "url_video": "https://cdn.animeiat.tv/files/28314/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP12%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28314/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP12%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28314/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP12%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28334/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP12%5B720p%5D.mp4"
+          ]
+        }
       ]
     }
   ]
