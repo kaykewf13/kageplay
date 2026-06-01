@@ -1,0 +1,41 @@
+{
+  "versao": "1.0",
+  "atualizado_em": "2026-05-31",
+  "descricao": "Mapa de fontes externas usadas como player principal no KagePlay. O player sempre tenta abrir em sala externa antes do fallback.",
+  "fontes": [
+    {
+      "fonte_id": "animesonlineclub",
+      "nome": "AnimesOnlineClub",
+      "base_url": "https://animesonlineclub.net/",
+      "tipo_player_padrao": "iframe_tentativa",
+      "modo_reproducao_padrao": "sala_externa",
+      "prioridade_player": 1,
+      "status_validacao": "Validado",
+      "publicar_automatico": true,
+      "observacao": "Usada como player principal para Sakamoto Days. Cada episodio aponta para a pagina externa validada."
+    },
+    {
+      "fonte_id": "anizero",
+      "nome": "AniZero",
+      "base_url": "https://anizero.org/",
+      "tipo_player_padrao": "iframe_tentativa",
+      "modo_reproducao_padrao": "sala_externa",
+      "prioridade_player": 2,
+      "status_validacao": "Revisao",
+      "publicar_automatico": false,
+      "observacao": "URLs /video/ID/ mapeadas em imports/anizero_02_player_urls_revisao.csv. Promover para catalog.json apenas apos vinculacao segura anime/episodio."
+    },
+    {
+      "fonte_id": "animeplayer-18",
+      "nome": "AnimePlayer +18",
+      "base_url": "https://animeplayer.com.br/genero/18/",
+      "tipo_player_padrao": "iframe_tentativa",
+      "modo_reproducao_padrao": "sala_externa",
+      "prioridade_player": 99,
+      "status_validacao": "Curadoria 18+ obrigatoria",
+      "publicar_automatico": false,
+      "adulto_18": true,
+      "observacao": "Fonte adulta registrada somente para curadoria. Nao publicar automaticamente."
+    }
+  ]
+}
