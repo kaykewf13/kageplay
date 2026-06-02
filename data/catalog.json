@@ -1,6 +1,6 @@
 {
   "versao": "sugoiapi-1.1",
-  "atualizado_em": "2026-06-01",
+  "atualizado_em": "2026-06-02",
   "fonte_catalogo": "SUGOIAPI",
   "origem": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "animes": [
@@ -31,6 +31,23 @@
           "url_video": "https://api.put.io/v2/files/1586165758/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "player_url": "https://api.put.io/v2/files/1586165758/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "fonte_url": "https://api.put.io/v2/files/1586165758/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 4,
+          "titulo_episodio": "T01 E04",
+          "url_video": "https://api.put.io/v2/files/1585024119/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1585024119/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1585024119/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "fonte_original": "SUGOIAPI playlist_validada.m3u",
           "tipo_player": "mp4",
           "modo_reproducao": "interno",
@@ -1021,7 +1038,8 @@
           "status_link": "Ativo",
           "adulto_18": false,
           "failover_urls": [
-            "https://api.put.io/v2/files/1584820788/stream?oauth_token=NLNXW4PKZWT2XLOROMIC"
+            "https://api.put.io/v2/files/1584820788/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+            "https://api.put.io/v2/files/1585101178/stream?oauth_token=NLNXW4PKZWT2XLOROMIC"
           ]
         },
         {
@@ -1770,7 +1788,10 @@
           "drm_paywall": "Nao",
           "publicar": "Sim",
           "status_link": "Ativo",
-          "adulto_18": false
+          "adulto_18": false,
+          "failover_urls": [
+            "https://api.put.io/v2/files/1584831608/stream?oauth_token=NLNXW4PKZWT2XLOROMIC"
+          ]
         }
       ]
     },
@@ -2226,6 +2247,23 @@
       "episodios": [
         {
           "temporada": 1,
+          "episodio_num": 1,
+          "titulo_episodio": "T01 E01",
+          "url_video": "https://api.put.io/v2/files/1584838195/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1584838195/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1584838195/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        },
+        {
+          "temporada": 1,
           "episodio_num": 3,
           "titulo_episodio": "T01 E03",
           "url_video": "https://api.put.io/v2/files/1590360823/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
@@ -2467,6 +2505,23 @@
           "failover_urls": [
             "https://api.put.io/v2/files/1584838196/stream?oauth_token=NLNXW4PKZWT2XLOROMIC"
           ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 21,
+          "titulo_episodio": "T01 E21",
+          "url_video": "https://api.put.io/v2/files/1584822146/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1584822146/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1584822146/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
         },
         {
           "temporada": 1,
@@ -3349,6 +3404,23 @@
           "failover_urls": [
             "https://api.put.io/v2/files/1584833178/stream?oauth_token=NLNXW4PKZWT2XLOROMIC"
           ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 7,
+          "titulo_episodio": "T01 E07",
+          "url_video": "https://api.put.io/v2/files/1584831644/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1584831644/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1584831644/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
         },
         {
           "temporada": 1,
@@ -6385,6 +6457,23 @@
         },
         {
           "temporada": 3,
+          "episodio_num": 5,
+          "titulo_episodio": "T03 E05",
+          "url_video": "https://api.put.io/v2/files/1591217199/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1591217199/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1591217199/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        },
+        {
+          "temporada": 3,
           "episodio_num": 7,
           "titulo_episodio": "T03 E07",
           "url_video": "https://api.put.io/v2/files/1589814676/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
@@ -6721,6 +6810,23 @@
       "fonte_principal": "SUGOIAPI",
       "fonte_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
       "episodios": [
+        {
+          "temporada": 1,
+          "episodio_num": 1,
+          "titulo_episodio": "T01 E01",
+          "url_video": "https://api.put.io/v2/files/1584822460/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1584822460/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1584822460/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        },
         {
           "temporada": 1,
           "episodio_num": 2,
@@ -8364,7 +8470,10 @@
           "drm_paywall": "Nao",
           "publicar": "Sim",
           "status_link": "Ativo",
-          "adulto_18": false
+          "adulto_18": false,
+          "failover_urls": [
+            "https://api.put.io/v2/files/1584107439/stream?oauth_token=NLNXW4PKZWT2XLOROMIC"
+          ]
         }
       ]
     },
@@ -8434,6 +8543,23 @@
           "url_video": "https://api.put.io/v2/files/1584874822/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "player_url": "https://api.put.io/v2/files/1584874822/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "fonte_url": "https://api.put.io/v2/files/1584874822/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        },
+        {
+          "temporada": 3,
+          "episodio_num": 8,
+          "titulo_episodio": "T03 E08",
+          "url_video": "https://api.put.io/v2/files/1584880359/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1584880359/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1584880359/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "fonte_original": "SUGOIAPI playlist_validada.m3u",
           "tipo_player": "mp4",
           "modo_reproducao": "interno",
@@ -8982,7 +9108,10 @@
           "drm_paywall": "Nao",
           "publicar": "Sim",
           "status_link": "Ativo",
-          "adulto_18": false
+          "adulto_18": false,
+          "failover_urls": [
+            "https://api.put.io/v2/files/1584084930/stream?oauth_token=NLNXW4PKZWT2XLOROMIC"
+          ]
         }
       ]
     },
@@ -10067,7 +10196,10 @@
           "drm_paywall": "Nao",
           "publicar": "Sim",
           "status_link": "Ativo",
-          "adulto_18": false
+          "adulto_18": false,
+          "failover_urls": [
+            "https://api.put.io/v2/files/1584833006/stream?oauth_token=NLNXW4PKZWT2XLOROMIC"
+          ]
         },
         {
           "temporada": 1,
@@ -10948,6 +11080,23 @@
           "failover_urls": [
             "https://api.put.io/v2/files/1584838474/stream?oauth_token=NLNXW4PKZWT2XLOROMIC"
           ]
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 50,
+          "titulo_episodio": "T01 E50",
+          "url_video": "https://api.put.io/v2/files/1584821610/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1584821610/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1584821610/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
         }
       ]
     },
@@ -12411,6 +12560,23 @@
         },
         {
           "temporada": 1,
+          "episodio_num": 23,
+          "titulo_episodio": "T01 E23",
+          "url_video": "https://api.put.io/v2/files/1584824477/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1584824477/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1584824477/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        },
+        {
+          "temporada": 1,
           "episodio_num": 24,
           "titulo_episodio": "T01 E24",
           "url_video": "https://api.put.io/v2/files/1584824626/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
@@ -12609,6 +12775,45 @@
           "url_video": "https://api.put.io/v2/files/1585191887/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "player_url": "https://api.put.io/v2/files/1585191887/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "fonte_url": "https://api.put.io/v2/files/1585191887/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        }
+      ]
+    },
+    {
+      "anime_id": "filme-blue-lock-episode-nagi",
+      "titulo": "Blue lock - Episode Nagi",
+      "slug": "filme-blue-lock-episode-nagi",
+      "categoria_principal": "Esportes",
+      "categorias_secundarias": [
+        "SUGOIAPI",
+        "Filmes",
+        "VOD",
+        "Player Nativo"
+      ],
+      "adulto_18": false,
+      "status": "SUGOIAPI",
+      "publicar": "Sim",
+      "descricao": "Filme/VOD importado automaticamente do SUGOIAPI, com link validado pelo pipeline do KagePlay.",
+      "capa_url": "https://placehold.co/480x720/16161f/9a9aae?text=Blue+lock+Episode+Nagi",
+      "banner_url": "https://placehold.co/1280x420/0c0c14/e6c369?text=Blue+lock+Episode+Nagi",
+      "fonte_principal": "SUGOIAPI",
+      "fonte_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
+      "episodios": [
+        {
+          "temporada": 1,
+          "episodio_num": 1,
+          "titulo_episodio": "Filme",
+          "url_video": "https://api.put.io/v2/files/1591216727/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1591216727/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1591216727/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "fonte_original": "SUGOIAPI playlist_validada.m3u",
           "tipo_player": "mp4",
           "modo_reproducao": "interno",
