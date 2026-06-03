@@ -1,6 +1,6 @@
 {
   "versao": "sugoiapi-1.1",
-  "atualizado_em": "2026-06-02",
+  "atualizado_em": "2026-06-03",
   "fonte_catalogo": "SUGOIAPI",
   "origem": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "animes": [
@@ -2286,6 +2286,23 @@
           "url_video": "https://api.put.io/v2/files/1585242586/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "player_url": "https://api.put.io/v2/files/1585242586/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "fonte_url": "https://api.put.io/v2/files/1585242586/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        },
+        {
+          "temporada": 1,
+          "episodio_num": 5,
+          "titulo_episodio": "T01 E05",
+          "url_video": "https://api.put.io/v2/files/1591638591/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1591638591/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1591638591/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "fonte_original": "SUGOIAPI playlist_validada.m3u",
           "tipo_player": "mp4",
           "modo_reproducao": "interno",
@@ -8240,6 +8257,23 @@
       "episodios": [
         {
           "temporada": 2,
+          "episodio_num": 1,
+          "titulo_episodio": "T02 E01",
+          "url_video": "https://api.put.io/v2/files/1591425976/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1591425976/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1591425976/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        },
+        {
+          "temporada": 2,
           "episodio_num": 3,
           "titulo_episodio": "T02 E03",
           "url_video": "https://api.put.io/v2/files/1585242819/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
@@ -12633,6 +12667,23 @@
       "episodios": [
         {
           "temporada": 1,
+          "episodio_num": 8,
+          "titulo_episodio": "T01 E08",
+          "url_video": "https://api.put.io/v2/files/1591499547/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1591499547/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1591499547/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        },
+        {
+          "temporada": 1,
           "episodio_num": 9,
           "titulo_episodio": "T01 E09",
           "url_video": "https://api.put.io/v2/files/1588595497/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
@@ -13282,6 +13333,84 @@
           "url_video": "https://api.put.io/v2/files/1583962553/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "player_url": "https://api.put.io/v2/files/1583962553/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "fonte_url": "https://api.put.io/v2/files/1583962553/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        }
+      ]
+    },
+    {
+      "anime_id": "filme-arifureta-shokugyou-de-sekai-saikyou-s2-ova-p1",
+      "titulo": "Arifureta Shokugyou de Sekai Saikyou S2 - OVA P1",
+      "slug": "filme-arifureta-shokugyou-de-sekai-saikyou-s2-ova-p1",
+      "categoria_principal": "Isekai",
+      "categorias_secundarias": [
+        "SUGOIAPI",
+        "Filmes",
+        "VOD",
+        "Player Nativo"
+      ],
+      "adulto_18": false,
+      "status": "SUGOIAPI",
+      "publicar": "Sim",
+      "descricao": "Filme/VOD importado automaticamente do SUGOIAPI, com link validado pelo pipeline do KagePlay.",
+      "capa_url": "https://placehold.co/480x720/16161f/9a9aae?text=Arifureta+Shokugyou+de+Sekai+Saikyou+S2+OVA+P1",
+      "banner_url": "https://placehold.co/1280x420/0c0c14/e6c369?text=Arifureta+Shokugyou+de+Sekai+Saikyou+S2+OVA+P1",
+      "fonte_principal": "SUGOIAPI",
+      "fonte_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
+      "episodios": [
+        {
+          "temporada": 1,
+          "episodio_num": 1,
+          "titulo_episodio": "Filme",
+          "url_video": "https://api.put.io/v2/files/1591430139/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1591430139/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1591430139/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false
+        }
+      ]
+    },
+    {
+      "anime_id": "filme-arifureta-shokugyou-de-sekai-saikyou-s2-ova-p2",
+      "titulo": "Arifureta Shokugyou de Sekai Saikyou S2 - OVA P2",
+      "slug": "filme-arifureta-shokugyou-de-sekai-saikyou-s2-ova-p2",
+      "categoria_principal": "Isekai",
+      "categorias_secundarias": [
+        "SUGOIAPI",
+        "Filmes",
+        "VOD",
+        "Player Nativo"
+      ],
+      "adulto_18": false,
+      "status": "SUGOIAPI",
+      "publicar": "Sim",
+      "descricao": "Filme/VOD importado automaticamente do SUGOIAPI, com link validado pelo pipeline do KagePlay.",
+      "capa_url": "https://placehold.co/480x720/16161f/9a9aae?text=Arifureta+Shokugyou+de+Sekai+Saikyou+S2+OVA+P2",
+      "banner_url": "https://placehold.co/1280x420/0c0c14/e6c369?text=Arifureta+Shokugyou+de+Sekai+Saikyou+S2+OVA+P2",
+      "fonte_principal": "SUGOIAPI",
+      "fonte_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
+      "episodios": [
+        {
+          "temporada": 1,
+          "episodio_num": 1,
+          "titulo_episodio": "Filme",
+          "url_video": "https://api.put.io/v2/files/1591432998/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "player_url": "https://api.put.io/v2/files/1591432998/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
+          "fonte_url": "https://api.put.io/v2/files/1591432998/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
           "fonte_original": "SUGOIAPI playlist_validada.m3u",
           "tipo_player": "mp4",
           "modo_reproducao": "interno",
