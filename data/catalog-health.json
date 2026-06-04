@@ -1,21 +1,21 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-06-03 08:34:27.120938Z",
+  "atualizado_em": "2026-06-04 08:06:57.010306Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
   "validate_links": true,
-  "itens_lidos": 817,
-  "titulos_publicados": 129,
-  "episodios_publicados": 682,
+  "itens_lidos": 829,
+  "titulos_publicados": 130,
+  "episodios_publicados": 694,
   "contadores": {
     "private_skipped": 0,
     "non_media_skipped": 0,
-    "live_skipped": 5
+    "live_skipped": 6
   },
   "validacao": {
-    "urls_verificadas": 817,
-    "urls_validas": 793,
+    "urls_verificadas": 829,
+    "urls_validas": 805,
     "urls_invalidas": 24
   },
   "invalidos_amostra": [
