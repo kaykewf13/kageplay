@@ -1,264 +1,24 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-06-07 07:42:15.608747Z",
+  "atualizado_em": "2026-06-08 08:28:23.032301Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
   "validate_links": true,
-  "itens_lidos": 835,
-  "titulos_publicados": 129,
-  "episodios_publicados": 679,
+  "itens_lidos": 24,
+  "titulos_publicados": 0,
+  "episodios_publicados": 0,
   "contadores": {
     "private_skipped": 0,
-    "non_media_skipped": 0,
-    "live_skipped": 5
+    "non_media_skipped": 785,
+    "live_skipped": 6
   },
   "validacao": {
-    "urls_verificadas": 835,
-    "urls_validas": 776,
-    "urls_invalidas": 59
+    "urls_verificadas": 24,
+    "urls_validas": 0,
+    "urls_invalidas": 24
   },
   "invalidos_amostra": [
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E01",
-      "url": "https://api.put.io/v2/files/1586722797/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E02",
-      "url": "https://api.put.io/v2/files/1586722798/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E03",
-      "url": "https://api.put.io/v2/files/1586722799/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E04",
-      "url": "https://api.put.io/v2/files/1586722800/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E05",
-      "url": "https://api.put.io/v2/files/1586722801/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E06",
-      "url": "https://api.put.io/v2/files/1586722802/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E07",
-      "url": "https://api.put.io/v2/files/1586722803/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E08",
-      "url": "https://api.put.io/v2/files/1586722804/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E09",
-      "url": "https://api.put.io/v2/files/1586722805/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E10",
-      "url": "https://api.put.io/v2/files/1586722806/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E11",
-      "url": "https://api.put.io/v2/files/1586722807/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "29-sai Dokushin Chuuken Boukensha no Nichijou S01 E12",
-      "url": "https://api.put.io/v2/files/1586722808/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E160",
-      "url": "https://api.put.io/v2/files/1589114471/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E161",
-      "url": "https://api.put.io/v2/files/1589114472/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E162",
-      "url": "https://api.put.io/v2/files/1589114473/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E163",
-      "url": "https://api.put.io/v2/files/1589114474/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E164",
-      "url": "https://api.put.io/v2/files/1589114475/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E165",
-      "url": "https://api.put.io/v2/files/1589114476/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E166",
-      "url": "https://api.put.io/v2/files/1589114477/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E167",
-      "url": "https://api.put.io/v2/files/1589114478/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E168",
-      "url": "https://api.put.io/v2/files/1589114479/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E169",
-      "url": "https://api.put.io/v2/files/1589114480/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E170",
-      "url": "https://api.put.io/v2/files/1589114481/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Boku no Hero Academia S01 E171",
-      "url": "https://api.put.io/v2/files/1589114482/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
     {
       "name": "Himouto! Umaru-chan S01 E01",
       "url": "https://cdn.animeiat.tv/files/28323/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP01%5B720p%5D.mp4",
@@ -497,26 +257,6 @@
         "status": null,
         "reason": "<urlopen error [Errno -5] No address associated with hostname>",
         "method": "GET"
-      }
-    },
-    {
-      "name": "Kimetsu no Yaiba - Yuukaku-hen S01 E01",
-      "url": "https://api.put.io/v2/files/1591802377/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
-      }
-    },
-    {
-      "name": "Kimetsu no Yaiba - Yuukaku-hen S01 E02",
-      "url": "https://api.put.io/v2/files/1591802378/stream?oauth_token=NLNXW4PKZWT2XLOROMIC",
-      "validation": {
-        "ok": false,
-        "status": 404,
-        "reason": "HTTPError 404",
-        "method": "HEAD"
       }
     }
   ]
