@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KagePlay — Catálogo Put.io</title>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<style>
+  :root{--bg:#0a0a0f;--card:#141420;--border:#2a2a3a;--text:#e8e8ef;--muted:#7a7a8a;--accent:#8b5cf6;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:16px;max-width:1200px;margin:0 auto;}
+  header{margin-bottom:16px;}
+  h1{font-size:20px;font-weight:700;}
+  .sub{color:var(--muted);font-size:13px;margin-top:4px;}
+  #player-wrap{position:sticky;top:0;z-index:10;background:var(--bg);padding-bottom:12px;margin-bottom:12px;}
+  video{width:100%;max-height:48vh;background:#000;border-radius:12px;display:none;}
+  video.ativo{display:block;}
+  #now-playing{font-size:13px;color:var(--accent);margin-top:6px;min-height:16px;}
+  #ext-actions{display:none;gap:8px;margin-top:8px;flex-wrap:wrap;}
+  #ext-actions.ativo{display:flex;}
+  .btn{padding:8px 14px;border-radius:8px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:13px;cursor:pointer;text-decoration:none;display:inline-block;}
+  .btn.primary{background:var(--accent);color:#fff;}
+  .aviso{font-size:12px;color:var(--muted);margin-top:6px;}
+  .controles{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+  input,select{padding:10px;border-radius:10px;border:1px solid var(--border);background:#0e0e16;color:var(--text);font-size:14px;}
+  input{flex:1;min-width:160px;}
+  .breadcrumb{font-size:13px;color:var(--muted);margin-bottom:12px;}
+  .breadcrumb a{color:var(--accent);cursor:pointer;text-decoration:none;}
+  .lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;}
+  .card{text-align:left;padding:12px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-size:13px;line-height:1.35;transition:border-color .15s,transform .1s;}
+  .card:hover{border-color:var(--accent);}
+  .card:active{transform:scale(.97);}
+  .card strong{display:block;margin-bottom:4px;}
+  .card .meta{color:var(--muted);font-size:11px;}
+  .card.pasta strong::before{content:"📁 ";}
+  .card.ep strong::before{content:"▶ ";}
+  .status{color:var(--muted);font-size:14px;padding:20px 0;}
+  .erro{color:#f87171;}
+</style>
+</head>
+<body>
+<header>
+  <h1>🎬 KagePlay — Catálogo Put.io</h1>
+  <div class="sub" id="contador">Carregando…</div>
+</header>
+
+<div id="player-wrap">
+  <video id="player" controls playsinline></video>
+  <div id="now-playing"></div>
+  <div id="ext-actions">
+    <a class="btn primary" id="btn-vlc" href="#">Abrir no VLC</a>
+    <button class="btn" id="btn-copy">Copiar link</button>
+  </div>
+  <div class="aviso" id="aviso-mkv"></div>
+</div>
+
+<div class="controles">
+  <input id="busca" type="text" placeholder="Buscar série ou episódio…" autocomplete="off">
+  <select id="genero"><option value="">Todos os gêneros</option></select>
+</div>
+
+<div class="breadcrumb" id="breadcrumb"></div>
+<div id="lista" class="lista"></div>
+<div id="status" class="status">Carregando catálogo…</div>
+
+<script>
+const INDEX_URL="https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/anime_index.json";
+const WORKER_BASE="https://sugoiapi-putio-proxy.viraltechh.workers.dev";
+const SXXEXX=/^(.*?)\s*S(\d{1,2})\s*E(\d{1,3})\b/i;
+
+let TODOS=[], ARVORE={}, AVULSOS=[];
+let nivel={genero:null,serie:null,temp:null};
+let hls=null;
+
+async function carregar(){
+  try{
+    const res=await fetch(`${INDEX_URL}?t=${Date.now()}`);
+    if(!res.ok)throw new Error("HTTP "+res.status);
+    const data=await res.json();
+    TODOS=data.itens||[];
+    document.getElementById("contador").textContent=
+      `${TODOS.length} títulos · atualizado ${new Date(data.gerado_em).toLocaleDateString("pt-BR")}`;
+    construirArvore();
+    montarGeneros();
+    render();
+    document.getElementById("status").textContent="";
+  }catch(e){
+    document.getElementById("status").innerHTML=`<span class="erro">Erro ao carregar: ${e.message}</span>`;
+  }
+}
+
+// Monta arvore: genero -> serie -> temporada -> [episodios]; avulsos por genero
+function construirArvore(){
+  ARVORE={}; AVULSOS=[];
+  TODOS.forEach(it=>{
+    const g=it.grupo||"Sem gênero";
+    const m=SXXEXX.exec(it.nome);
+    if(m){
+      const serie=m[1].trim()||it.nome;
+      const temp="T"+String(parseInt(m[2],10)).padStart(2,"0");
+      const ep=parseInt(m[3],10);
+      ARVORE[g]=ARVORE[g]||{};
+      ARVORE[g][serie]=ARVORE[g][serie]||{};
+      ARVORE[g][serie][temp]=ARVORE[g][serie][temp]||[];
+      ARVORE[g][serie][temp].push({...it,ep});
+    }else{
+      AVULSOS.push(it);
+    }
+  });
+}
+
+function montarGeneros(){
+  const sel=document.getElementById("genero");
+  const grupos=[...new Set(TODOS.map(i=>i.grupo).filter(Boolean))].sort();
+  grupos.forEach(g=>{const o=document.createElement("option");o.value=g;o.textContent=g;sel.appendChild(o);});
+}
+
+function setBreadcrumb(){
+  const bc=document.getElementById("breadcrumb");
+  const parts=['<a onclick="irRaiz()">Início</a>'];
+  if(nivel.genero)parts.push(`<a onclick="irGenero()">${nivel.genero}</a>`);
+  if(nivel.serie)parts.push(`<a onclick="irSerie()">${nivel.serie}</a>`);
+  if(nivel.temp)parts.push(nivel.temp);
+  bc.innerHTML=parts.join(" › ");
+}
+
+window.irRaiz=()=>{nivel={genero:null,serie:null,temp:null};render();};
+window.irGenero=()=>{nivel.serie=null;nivel.temp=null;render();};
+window.irSerie=()=>{nivel.temp=null;render();};
+
+function card(label,meta,cls,onclick){
+  const c=document.createElement(onclick?"button":"div");
+  c.className="card "+cls;
+  c.innerHTML=`<strong>${escapeHtml(label)}</strong><span class="meta">${escapeHtml(meta)}</span>`;
+  if(onclick)c.onclick=onclick;
+  return c;
+}
+
+function render(){
+  const busca=document.getElementById("busca").value.toLowerCase().trim();
+  const filtroG=document.getElementById("genero").value;
+  const lista=document.getElementById("lista");
+  lista.innerHTML="";
+  setBreadcrumb();
+
+  // Busca textual global: lista episodios direto
+  if(busca){
+    const res=TODOS.filter(i=>i.nome.toLowerCase().includes(busca)&&(!filtroG||i.grupo===filtroG));
+    res.slice(0,300).forEach(it=>lista.appendChild(card(it.nome,it.grupo,"ep",()=>tocar(it))));
+    if(!res.length)lista.innerHTML='<div class="status">Nada encontrado.</div>';
+    return;
+  }
+
+  // Nivel 1: generos (ou aplica filtro de genero)
+  if(!nivel.genero){
+    let generos=Object.keys(ARVORE).sort();
+    if(filtroG)generos=generos.filter(g=>g===filtroG);
+    generos.forEach(g=>{
+      const nSeries=Object.keys(ARVORE[g]).length;
+      lista.appendChild(card(g,`${nSeries} séries`,"pasta",()=>{nivel.genero=g;render();}));
+    });
+    // Avulsos
+    let av=AVULSOS;
+    if(filtroG)av=av.filter(i=>i.grupo===filtroG);
+    if(av.length)lista.appendChild(card("Filmes / OVAs / Especiais",`${av.length} itens`,"pasta",()=>{nivel.genero="__AVULSOS__";render();}));
+    return;
+  }
+
+  // Avulsos abertos
+  if(nivel.genero==="__AVULSOS__"){
+    let av=AVULSOS;
+    if(filtroG)av=av.filter(i=>i.grupo===filtroG);
+    av.forEach(it=>lista.appendChild(card(it.nome,it.grupo,"ep",()=>tocar(it))));
+    return;
+  }
+
+  // Nivel 2: series do genero
+  if(!nivel.serie){
+    const series=Object.keys(ARVORE[nivel.genero]).sort();
+    series.forEach(s=>{
+      const temps=Object.keys(ARVORE[nivel.genero][s]).length;
+      const eps=Object.values(ARVORE[nivel.genero][s]).reduce((a,t)=>a+t.length,0);
+      lista.appendChild(card(s,`${temps} temp · ${eps} eps`,"pasta",()=>{nivel.serie=s;render();}));
+    });
+    return;
+  }
+
+  // Nivel 3: temporadas (ou pula direto pros eps se so 1 temp)
+  if(!nivel.temp){
+    const temps=Object.keys(ARVORE[nivel.genero][nivel.serie]).sort();
+    if(temps.length===1){nivel.temp=temps[0];}
+    else{
+      temps.forEach(t=>{
+        const n=ARVORE[nivel.genero][nivel.serie][t].length;
+        lista.appendChild(card(t.replace("T","Temporada "),`${n} eps`,"pasta",()=>{nivel.temp=t;render();}));
+      });
+      return;
+    }
+  }
+
+  // Nivel 4: episodios
+  const eps=[...ARVORE[nivel.genero][nivel.serie][nivel.temp]].sort((a,b)=>a.ep-b.ep);
+  eps.forEach(it=>lista.appendChild(card(`Ep ${String(it.ep).padStart(2,"0")}`,it.nome,"ep",()=>tocar(it))));
+}
+
+function tocar(item){
+  const player=document.getElementById("player");
+  const ext=document.getElementById("ext-actions");
+  const aviso=document.getElementById("aviso-mkv");
+  const src=`${WORKER_BASE}/?id=${item.id}`;
+  const ehMkv=/\.mkv$/i.test(item.nome)||!/\.mp4$/i.test(item.nome); // assume mkv salvo indicacao de mp4
+
+  document.getElementById("now-playing").textContent="▶ "+item.nome;
+  if(hls){hls.destroy();hls=null;}
+
+  // Tenta tocar embutido sempre; se for mkv, oferece player externo em paralelo
+  player.classList.add("ativo");
+  if(src.includes(".m3u8")&&window.Hls&&window.Hls.isSupported()){
+    hls=new window.Hls();hls.loadSource(src);hls.attachMedia(player);
+  }else{
+    player.src=src;
+  }
+  player.play().catch(()=>{});
+
+  // Acoes de player externo (essencial pra .mkv no iPhone)
+  ext.classList.add("ativo");
+  document.getElementById("btn-vlc").href="vlc://"+src;
+  document.getElementById("btn-copy").onclick=()=>{
+    navigator.clipboard.writeText(src).then(()=>{
+      document.getElementById("btn-copy").textContent="Copiado!";
+      setTimeout(()=>document.getElementById("btn-copy").textContent="Copiar link",1500);
+    });
+  };
+  aviso.textContent=ehMkv
+    ?"Formato .mkv pode não tocar no navegador. Use \"Abrir no VLC\" ou copie o link para o Infuse/VLC."
+    :"";
+  player.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+
+document.getElementById("busca").addEventListener("input",render);
+document.getElementById("genero").addEventListener("change",()=>{nivel={genero:null,serie:null,temp:null};render();});
+
+carregar();
+</script>
+</body>
+</html>
