@@ -1,6 +1,6 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-07-19 06:12:54.938226Z",
+  "atualizado_em": "2026-07-20 06:32:57.465120Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
@@ -11,7 +11,7 @@
   "contadores": {
     "private_skipped": 0,
     "non_media_skipped": 951,
-    "live_skipped": 5
+    "live_skipped": 6
   },
   "validacao": {
     "urls_verificadas": 24,
@@ -34,8 +34,8 @@
       "url": "https://cdn.animeiat.tv/files/28336/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP01%5B720p%5D.mp4",
       "validation": {
         "ok": false,
-        "status": 441,
-        "reason": "HTTPError 441",
+        "status": 404,
+        "reason": "HTTPError 404",
         "method": "HEAD"
       }
     },
@@ -74,8 +74,8 @@
       "url": "https://cdn.animeiat.tv/files/28335/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP03%5B720p%5D.mp4",
       "validation": {
         "ok": false,
-        "status": 441,
-        "reason": "HTTPError 441",
+        "status": 404,
+        "reason": "HTTPError 404",
         "method": "HEAD"
       }
     },
@@ -94,8 +94,8 @@
       "url": "https://cdn.animeiat.tv/files/28330/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP04%5B720p%5D.mp4",
       "validation": {
         "ok": false,
-        "status": 441,
-        "reason": "HTTPError 441",
+        "status": 404,
+        "reason": "HTTPError 404",
         "method": "HEAD"
       }
     },
