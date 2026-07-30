@@ -1,6 +1,6 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-07-29 06:13:51.597320Z",
+  "atualizado_em": "2026-07-30 06:06:46.328435Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
@@ -46,7 +46,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "GET"
+        "method": "HEAD"
       }
     },
     {
@@ -156,7 +156,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "GET"
+        "method": "HEAD"
       }
     },
     {
@@ -166,7 +166,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "GET"
+        "method": "HEAD"
       }
     },
     {
@@ -176,7 +176,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "GET"
+        "method": "HEAD"
       }
     },
     {
