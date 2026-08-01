@@ -1,6 +1,6 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-07-31 06:29:28.714034Z",
+  "atualizado_em": "2026-08-01 06:14:44.921414Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
@@ -10,8 +10,8 @@
   "episodios_publicados": 0,
   "contadores": {
     "private_skipped": 0,
-    "non_media_skipped": 951,
-    "live_skipped": 6
+    "non_media_skipped": 0,
+    "live_skipped": 5
   },
   "validacao": {
     "urls_verificadas": 24,
@@ -26,7 +26,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -36,7 +36,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -46,7 +46,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -56,7 +56,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -66,7 +66,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -76,7 +76,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -86,7 +86,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -96,7 +96,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -106,7 +106,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -116,7 +116,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -126,7 +126,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -136,7 +136,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -146,7 +146,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -156,7 +156,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -166,7 +166,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -176,7 +176,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -186,7 +186,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -196,7 +196,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -206,7 +206,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -216,7 +216,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -226,7 +226,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -236,7 +236,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -246,7 +246,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     },
     {
@@ -256,7 +256,7 @@
         "ok": false,
         "status": 441,
         "reason": "HTTPError 441",
-        "method": "HEAD"
+        "method": "GET"
       }
     }
   ]
