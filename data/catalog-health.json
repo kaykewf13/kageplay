@@ -1,6 +1,6 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-08-05 06:06:17.378380Z",
+  "atualizado_em": "2026-08-06 06:10:34.482302Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
@@ -25,7 +25,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -35,7 +35,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -45,7 +45,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -55,7 +55,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -65,7 +65,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -75,7 +75,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -85,7 +85,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -95,7 +95,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -105,7 +105,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -115,7 +115,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -125,7 +125,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -135,7 +135,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -145,7 +145,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -155,7 +155,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -165,7 +165,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -175,7 +175,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -185,7 +185,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -195,7 +195,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -205,7 +205,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -215,7 +215,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -225,7 +225,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -235,7 +235,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -245,7 +245,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -255,7 +255,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [Errno -2] Name or service not known>",
+        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
         "method": "GET"
       }
     }
