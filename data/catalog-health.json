@@ -1,6 +1,6 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-08-08 04:34:57.030735Z",
+  "atualizado_em": "2026-08-09 04:46:55.316797Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
@@ -11,7 +11,7 @@
   "contadores": {
     "private_skipped": 0,
     "non_media_skipped": 0,
-    "live_skipped": 6
+    "live_skipped": 5
   },
   "validacao": {
     "urls_verificadas": 24,
