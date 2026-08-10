@@ -1,6 +1,6 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-08-09 04:46:55.316797Z",
+  "atualizado_em": "2026-08-10 05:05:58.466668Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
@@ -11,7 +11,7 @@
   "contadores": {
     "private_skipped": 0,
     "non_media_skipped": 0,
-    "live_skipped": 5
+    "live_skipped": 6
   },
   "validacao": {
     "urls_verificadas": 24,
@@ -65,7 +65,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
         "method": "GET"
       }
     },
@@ -105,7 +105,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
         "method": "GET"
       }
     },
@@ -135,7 +135,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
         "method": "GET"
       }
     },
@@ -145,7 +145,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
         "method": "GET"
       }
     },
@@ -175,7 +175,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
         "method": "GET"
       }
     },
@@ -235,7 +235,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
         "method": "GET"
       }
     },
@@ -245,7 +245,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
         "method": "GET"
       }
     },
@@ -255,7 +255,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)>",
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
         "method": "GET"
       }
     }
