@@ -1,6 +1,6 @@
 {
   "versao": "sugoiapi-1.1",
-  "atualizado_em": "2026-08-18",
+  "atualizado_em": "2026-08-19",
   "fonte_catalogo": "SUGOIAPI",
   "origem": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "animes": [
@@ -39,7 +39,10 @@
           "drm_paywall": "Nao",
           "publicar": "Sim",
           "status_link": "Ativo",
-          "adulto_18": false
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28336/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP01%5B720p%5D.mp4"
+          ]
         },
         {
           "temporada": 1,
@@ -56,7 +59,10 @@
           "drm_paywall": "Nao",
           "publicar": "Sim",
           "status_link": "Ativo",
-          "adulto_18": false
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28329/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP02%5B720p%5D.mp4"
+          ]
         },
         {
           "temporada": 1,
@@ -180,6 +186,26 @@
         },
         {
           "temporada": 1,
+          "episodio_num": 9,
+          "titulo_episodio": "T01 E09",
+          "url_video": "https://cdn.animeiat.tv/files/28322/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP09%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28322/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP09%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28322/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP09%5B720p%5D.mp4",
+          "fonte_original": "SUGOIAPI playlist_validada.m3u",
+          "tipo_player": "mp4",
+          "modo_reproducao": "interno",
+          "modo_visual": "video_nativo",
+          "gratuito_autorizado": "Sim",
+          "drm_paywall": "Nao",
+          "publicar": "Sim",
+          "status_link": "Ativo",
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28325/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP09%5B720p%5D.mp4"
+          ]
+        },
+        {
+          "temporada": 1,
           "episodio_num": 10,
           "titulo_episodio": "T01 E10",
           "url_video": "https://cdn.animeiat.tv/files/28319/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP10%5B720p%5D.mp4",
@@ -213,7 +239,10 @@
           "drm_paywall": "Nao",
           "publicar": "Sim",
           "status_link": "Ativo",
-          "adulto_18": false
+          "adulto_18": false,
+          "failover_urls": [
+            "https://cdn.animeiat.tv/files/28326/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP11%5B720p%5D.mp4"
+          ]
         },
         {
           "temporada": 1,
