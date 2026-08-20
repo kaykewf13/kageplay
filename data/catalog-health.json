@@ -1,6 +1,6 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-08-19 04:07:52.675495Z",
+  "atualizado_em": "2026-08-20 04:08:10.879154Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
@@ -11,12 +11,63 @@
   "contadores": {
     "private_skipped": 0,
     "non_media_skipped": 0,
-    "live_skipped": 8
+    "live_skipped": 9
   },
   "validacao": {
     "urls_verificadas": 24,
-    "urls_validas": 24,
-    "urls_invalidas": 0
+    "urls_validas": 19,
+    "urls_invalidas": 5
   },
-  "invalidos_amostra": []
+  "invalidos_amostra": [
+    {
+      "name": "Himouto! Umaru-chan S01 E02",
+      "url": "https://cdn.animeiat.tv/files/28316/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP02%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": 403,
+        "reason": "HTTPError 403",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E06",
+      "url": "https://cdn.animeiat.tv/files/28313/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP06%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E07",
+      "url": "https://cdn.animeiat.tv/files/28320/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP07%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E09",
+      "url": "https://cdn.animeiat.tv/files/28322/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP09%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Himouto! Umaru-chan S01 E10",
+      "url": "https://cdn.animeiat.tv/files/28319/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP10%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+        "method": "GET"
+      }
+    }
+  ]
 }
