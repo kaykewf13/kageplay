@@ -1,6 +1,6 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-08-26 04:09:54.744618Z",
+  "atualizado_em": "2026-08-27 14:29:06.721512Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
@@ -15,8 +15,19 @@
   },
   "validacao": {
     "urls_verificadas": 24,
-    "urls_validas": 24,
-    "urls_invalidas": 0
+    "urls_validas": 23,
+    "urls_invalidas": 1
   },
-  "invalidos_amostra": []
+  "invalidos_amostra": [
+    {
+      "name": "Himouto! Umaru-chan S01 E10",
+      "url": "https://cdn.animeiat.tv/files/28319/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP10%5B720p%5D.mp4",
+      "validation": {
+        "ok": false,
+        "status": null,
+        "reason": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+        "method": "GET"
+      }
+    }
+  ]
 }
