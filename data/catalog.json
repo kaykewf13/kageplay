@@ -1,6 +1,6 @@
 {
   "versao": "sugoiapi-1.1",
-  "atualizado_em": "2026-08-29",
+  "atualizado_em": "2026-08-30",
   "fonte_catalogo": "SUGOIAPI",
   "origem": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "animes": [
@@ -28,9 +28,9 @@
           "temporada": 1,
           "episodio_num": 1,
           "titulo_episodio": "T01 E01",
-          "url_video": "https://cdn.animeiat.tv/files/28323/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP01%5B720p%5D.mp4",
-          "player_url": "https://cdn.animeiat.tv/files/28323/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP01%5B720p%5D.mp4",
-          "fonte_url": "https://cdn.animeiat.tv/files/28323/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP01%5B720p%5D.mp4",
+          "url_video": "https://cdn.animeiat.tv/files/28336/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP01%5B720p%5D.mp4",
+          "player_url": "https://cdn.animeiat.tv/files/28336/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP01%5B720p%5D.mp4",
+          "fonte_url": "https://cdn.animeiat.tv/files/28336/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP01%5B720p%5D.mp4",
           "fonte_original": "SUGOIAPI playlist_validada.m3u",
           "tipo_player": "mp4",
           "modo_reproducao": "interno",
@@ -39,10 +39,7 @@
           "drm_paywall": "Nao",
           "publicar": "Sim",
           "status_link": "Ativo",
-          "adulto_18": false,
-          "failover_urls": [
-            "https://cdn.animeiat.tv/files/28336/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP01%5B720p%5D.mp4"
-          ]
+          "adulto_18": false
         },
         {
           "temporada": 1,
@@ -199,10 +196,7 @@
           "drm_paywall": "Nao",
           "publicar": "Sim",
           "status_link": "Ativo",
-          "adulto_18": false,
-          "failover_urls": [
-            "https://cdn.animeiat.tv/files/28325/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP09%5B720p%5D.mp4"
-          ]
+          "adulto_18": false
         },
         {
           "temporada": 1,
