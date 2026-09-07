@@ -1,6 +1,6 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-09-06 08:04:01.679472Z",
+  "atualizado_em": "2026-09-07 08:34:14.650157Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
@@ -165,7 +165,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error timed out>",
+        "reason": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>",
         "method": "GET"
       }
     },
@@ -215,7 +215,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>",
+        "reason": "<urlopen error timed out>",
         "method": "GET"
       }
     },
