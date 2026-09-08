@@ -1,13 +1,13 @@
 {
   "versao": "1.1",
-  "atualizado_em": "2026-09-07 08:34:14.650157Z",
+  "atualizado_em": "2026-09-08 08:16:53.371941Z",
   "m3u_url": "https://raw.githubusercontent.com/kaykewf13/SUGOIAPI/main/output/playlist_validada.m3u",
   "allow_tokenized_urls": true,
   "include_movies": true,
   "validate_links": true,
   "itens_lidos": 24,
-  "titulos_publicados": 0,
-  "episodios_publicados": 0,
+  "titulos_publicados": 1,
+  "episodios_publicados": 4,
   "contadores": {
     "private_skipped": 0,
     "non_media_skipped": 0,
@@ -15,23 +15,13 @@
   },
   "validacao": {
     "urls_verificadas": 24,
-    "urls_validas": 0,
-    "urls_invalidas": 24
+    "urls_validas": 5,
+    "urls_invalidas": 19
   },
   "invalidos_amostra": [
     {
       "name": "Himouto! Umaru-chan S01 E01",
       "url": "https://cdn.animeiat.tv/files/28323/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP01%5B720p%5D.mp4",
-      "validation": {
-        "ok": false,
-        "status": null,
-        "reason": "<urlopen error timed out>",
-        "method": "GET"
-      }
-    },
-    {
-      "name": "Himouto! Umaru-chan S01 E01",
-      "url": "https://cdn.animeiat.tv/files/28336/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP01%5B720p%5D.mp4",
       "validation": {
         "ok": false,
         "status": null,
@@ -141,16 +131,6 @@
     },
     {
       "name": "Himouto! Umaru-chan S01 E07",
-      "url": "https://cdn.animeiat.tv/files/28320/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP07%5B720p%5D.mp4",
-      "validation": {
-        "ok": false,
-        "status": null,
-        "reason": "<urlopen error timed out>",
-        "method": "GET"
-      }
-    },
-    {
-      "name": "Himouto! Umaru-chan S01 E07",
       "url": "https://cdn.animeiat.tv/files/28332/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP07%5B720p%5D.mp4",
       "validation": {
         "ok": false,
@@ -165,7 +145,7 @@
       "validation": {
         "ok": false,
         "status": null,
-        "reason": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>",
+        "reason": "<urlopen error timed out>",
         "method": "GET"
       }
     },
@@ -212,36 +192,6 @@
     {
       "name": "Himouto! Umaru-chan S01 E10",
       "url": "https://cdn.animeiat.tv/files/28331/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP10%5B720p%5D.mp4",
-      "validation": {
-        "ok": false,
-        "status": null,
-        "reason": "<urlopen error timed out>",
-        "method": "GET"
-      }
-    },
-    {
-      "name": "Himouto! Umaru-chan S01 E11",
-      "url": "https://cdn.animeiat.tv/files/28321/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP11%5B720p%5D.mp4",
-      "validation": {
-        "ok": false,
-        "status": null,
-        "reason": "<urlopen error timed out>",
-        "method": "GET"
-      }
-    },
-    {
-      "name": "Himouto! Umaru-chan S01 E11",
-      "url": "https://cdn.animeiat.tv/files/28326/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_2nd_Season_-_EP11%5B720p%5D.mp4",
-      "validation": {
-        "ok": false,
-        "status": null,
-        "reason": "<urlopen error timed out>",
-        "method": "GET"
-      }
-    },
-    {
-      "name": "Himouto! Umaru-chan S01 E12",
-      "url": "https://cdn.animeiat.tv/files/28314/%5BAnimeiat.co%5DHimouto%21_Umaru-chan_-_EP12%5B720p%5D.mp4",
       "validation": {
         "ok": false,
         "status": null,
